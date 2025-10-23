@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>居家减脂塑形周计划</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'PingFang SC', 'Helvetica Neue', Arial, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+            padding: 15px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            padding: 20px 0;
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            border-radius: 15px;
+            margin-bottom: 20px;
+            color: white;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .subtitle {
+            font-size: 16px;
+            opacity: 0.9;
+            margin-bottom: 15px;
+        }
+        
+        .day-card {
+            background: white;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .day-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .day-header {
+            background: #4e54c8;
+            color: white;
+            padding: 15px;
+            font-weight: 600;
+            font-size: 18px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .day-content {
+            padding: 20px;
+        }
+        
+        .section {
+            margin-bottom: 25px;
+        }
+        
+        .section-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #4e54c8;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #f0f4f8;
+        }
+        
+        .meal-item {
+            margin-bottom: 15px;
+            padding-left: 10px;
+            border-left: 3px solid #6a11cb;
+        }
+        
+        .meal-title {
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #444;
+        }
+        
+        .meal-content {
+            color: #666;
+        }
+        
+        .exercise-item {
+            background: #f8fbff;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-left: 4px solid #2575fc;
+        }
+        
+        .exercise-title {
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #444;
+        }
+        
+        .exercise-detail {
+            color: #666;
+            margin-bottom: 5px;
+        }
+        
+        .tip-box {
+            background: #e6f7ff;
+            border-radius: 10px;
+            padding: 15px;
+            border-left: 4px solid #1890ff;
+            margin-top: 15px;
+        }
+        
+        .tip-title {
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #444;
+        }
+        
+        .bilibili-link {
+            display: block;
+            background: #fb7299;
+            color: white;
+            text-align: center;
+            padding: 12px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 15px;
+            transition: background 0.3s;
+        }
+        
+        .bilibili-link:hover {
+            background: #e65a86;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            color: #666;
+            font-size: 14px;
+        }
+        
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+            
+            h1 {
+                font-size: 22px;
+            }
+            
+            .day-header {
+                font-size: 16px;
+                padding: 12px;
+            }
+            
+            .day-content {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>居家减脂塑形周计划</h1>
+        <div class="subtitle">无器械 · 精准训练 · 健康饮食</div>
+    </header>
+    
+    <!-- 周一 -->
+    <div class="day-card">
+        <div class="day-header">
+            <span>周一</span>
+            <span>全身塑形</span>
+        </div>
+        <div class="day-content">
+            <div class="section">
+                <div class="section-title">🏃 运动计划</div>
+                <div class="exercise-item">
+                    <div class="exercise-title">热身激活 (5-8分钟)</div>
+                    <div class="exercise-detail">- 关节活动：转动脚踝、膝盖、髋部、手腕、肩膀、颈部（各30秒）</div>
+                    <div class="exercise-detail">- 开合跳：40秒</div>
+                    <div class="exercise-detail">- 高抬腿：40秒</div>
+                </div>
+                <div class="exercise-item">
+                    <div class="exercise-title">全身力量 (25分钟)</div>
+                    <div class="exercise-detail">- 深蹲：3组，每组12-15次（组间休息45秒）</div>
+                    <div class="exercise-detail">- 跪姿俯卧撑：3组，每组做到力竭（组间休息60秒）</div>
+                    <div class="exercise-detail">- 交替弓步蹲：3组，每条腿10-12次（组间休息45秒）</div>
+                    <div class="exercise-detail">- 平板支撑：3组，每组坚持30-45秒（组间休息60秒）</div>
+                    <div class="exercise-detail">- 仰卧臀桥：3组，每组15次（组间休息30秒）</div>
+                </div>
+                <div class="exercise-item">
+                    <div class="exercise-title">拉伸放松 (5分钟)</div>
+                    <div class="exercise-detail">- 重点拉伸大腿、臀部、胸部、手臂</div>
+                </div>
+                <a href="https://search.bilibili.com/all?keyword=周六野%20全身塑形" class="bilibili-link">B站跟练视频推荐</a>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">🍽️ 三餐搭配</div>
+                <div class="meal-item">
+                    <div class="meal-title">早餐 (7:00-8:00)</div>
+                    <div class="meal-content">水煮蛋1个 + 全麦面包1片 + 无糖牛奶/豆浆200ml</div>
+                </div>
+                <div class="meal-item">
+                    <div class="meal-title">午餐 (12:00-13:00)</div>
+                    <div class="meal-content">糙米饭（一拳头大小） + 清蒸鸡胸肉/鱼肉（一掌心大小） + 清炒蔬菜（两大捧）</div>
+                </div>
+                <div class="meal-item">
+                    <div class="meal-title">晚餐 (18:00-19:00)</div>
+                    <div class="meal-content">蒸红薯（一小个） + 豆腐菌菇汤（一大碗） + 凉拌菠菜</div>
+                </div>
+            </div>
+            
+            <div class="tip-box">
+                <div class="tip-title">核心提示</div>
+                <div>力量日是塑形基础，感受肌肉发力。动作质量大于数量。</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 周二 -->
+    <div class="day-card">
+        <div class="day-header">
+            <span>周二</span>
+            <span>有氧燃脂</span>
+        </div>
+        <div class="day-content">
+            <div class="section">
+                <div class="section-title">🏃 运动计划</div>
+                <div class="exercise-item">
+                    <div class="exercise-title">热身 (5分钟)</div>
+                    <div class="exercise-detail">- 关节活动和动态拉伸</div>
+                </div>
+                <div class="exercise-item">
+                    <div class="exercise-title">持续有氧 (30分钟)</div>
+                    <div class="exercise-detail">- 选择一种：低冲击有氧操 或 原地慢跑+高抬腿/后踢腿组合</div>
+                    <div class="exercise-detail">- 保持微喘但能说话的程度</div>
+                </div>
+                <div class="exercise-item">
+                    <div class="exercise-title">拉伸 (5分钟)</div>
+                    <div class="exercise-detail">- 重点拉伸大腿后侧、小腿、腰部</div>
+                </div>
+                <a href="https://search.bilibili.com/all?keyword=海洋饼干%20有氧操" class="bilibili-link">B站跟练视频推荐</a>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">🍽️ 三餐搭配</div>
+                <div class="meal-item">
+                    <div class="meal-title">早餐</div>
+                    <div class="meal-content">燕麦粥（40g燕麦） + 鸡蛋1个 + 苹果/橙子半个</div>
+                </div>
+                <div class="meal-item">
+                    <div class="meal-title">午餐</div>
+                    <div class="meal-content">杂粮饭（一拳头大小） + 烤瘦肉（一掌心） + 大份蔬菜沙拉（油醋汁）</div>
+                </div>
+                <div class="meal-item">
+                    <div class="meal-title">晚餐</div>
+                    <div class="meal-content">杂粮粥（一碗） + 清炒虾仁（一手掌） + 焯水西兰花</div>
+                </div>
+            </div>
+            
+            <div class="tip-box">
+                <div class="tip-title">核心提示</div>
+                <div>保持心率，持续燃烧脂肪。有氧运动是减脂的关键。</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 周三 -->
+    <div class="day-card">
+        <div class="day-header">
+            <span>周三</span>
+            <span>积极恢复</span>
+        </div>
+        <div class="day-content">
+            <div class="section">
+                <div class="section-title">🏃 运动计划</div>
+                <div class="exercise-item">
+                    <div class="exercise-title">主动恢复日 (可选，15-20分钟)</div>
+                    <div class="exercise-detail">- 全身拉伸瑜伽或散步</div>
+                    <div class="exercise-detail">- 或完全休息</div>
+                </div>
+                <a href="https://search.bilibili.com/all?keyword=CoffeeLam%20瑜伽" class="bilibili-link">B站跟练视频推荐</a>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">🍽️ 三餐搭配</div>
+                <div class="meal-item">
+                    <div class="meal-title">早餐</div>
+                    <div class="meal-content">同周一，可将面包换成玉米</div>
+                </div>
+                <div class="meal-item">
+                    <div class="meal-title">午餐</div>
+                    <div class="meal-content">同周二，可加入一份蒸豆腐</div>
+                </div>
+                <div class="meal-item">
+                    <div class="meal-title">晚餐</div>
+                    <div class="meal-content">同周二，可替换为冬瓜汤</div>
+                </div>
+            </div>
+            
+            <div class="tip-box">
+                <div class="tip-title">核心提示</div>
+                <div>给身体修复时间，为后续训练储能。休息也是训练的一部分。</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 周四 -->
+    <div class="day-card">
+        <div class="day-header">
+            <span>周四</span>
+            <span>上肢+核心</span>
+        </div>
+        <div class="day-content">
+            <div class="section">
+                <div class="section-title">🏃 运动计划</div>
+                <div class="exercise-item">
+                    <div class="exercise-title">热身 (5分钟)</div>
+                    <div class="exercise-detail">- 重点活动上肢：手臂画圈、肩部环绕</div>
+                </div>
+                <div class="exercise-item">
+                    <div class="exercise-title">针对性训练 (25分钟)</div>
+                    <div class="exercise-detail">- 钻石俯卧撑（或跪姿宽距）：3组，每组做到力竭（组间休息60秒）【紧致手臂】</div>
+                    <div class="exercise-detail">- 俯身YTW伸展：每个字母3组，每组10次（无休息连续做）【改善圆肩驼背】</div>
+                    <div class="exercise-detail">- 仰卧卷腹：3组，每组15-20次（组间休息30秒）【上腹部】</div>
+                    <div class="exercise-detail">- 仰卧交替抬腿：3组，每条腿15-20次（组间休息30秒）【下腹部】</div>
+                    <div class="exercise-detail">- 俄罗斯转体：3组，每侧15次（组间休息30秒）【侧腹】</div>
+                </div>
+                <div class="exercise-item">
+                    <div class="exercise-title">拉伸 (5分钟)</div>
+                    <div class="exercise-detail">- 重点拉伸胸、肩、腹、背</div>
+                </div>
+                <a href="https://search.bilibili.com/all?keyword=帕梅拉%20手臂训练" class="bilibili-link">B站跟练视频推荐</a>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">🍽️ 三餐搭配</div>
+                <div class="meal-item">
+                    <div class="meal-title">早餐</div>
+                    <div class="meal-content">无糖酸奶150g + 坚果一小把（10g） + 燕麦片30g</div>
+                </div>
+                <div class="meal-item">
+                    <div class="meal-title">午餐</div>
+                    <div class="meal-content">鸡胸肉沙拉（含生菜、圣女果、黄瓜） + 油醋汁调味</div>
+                </div>
+                <div class="meal-item">
+                    <div class="meal-title">晚餐</div>
+                    <div class="meal-content">清蒸鲈鱼（半条） + 凉拌秋葵 + 不摄入主食</div>
+                </div>
+            </div>
+            
+            <div class="tip-box">
+                <div class="tip-title">核心提示</div>
+                <div>专注手臂和腰腹的发力感，慢起慢落。动作质量第一。</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 周五 -->
+    <div class="day-card">
+        <div class="day-header">
+            <span>周五</span>
+            <span>HIIT燃脂</span>
+        </div>
+        <div class="day-content">
+            <div class="section">
+                <div class="section-title">🏃 运动计划</div>
+                <div class="exercise-item">
+                    <div class="exercise-title">热身 (5分钟)</div>
+                    <div class="exercise-detail">- 充分热身，避免受伤</div>
+                </div>
+                <div class="exercise-item">
+                    <div class="exercise-title">HIIT循环 (20分钟)</div>
+                    <div class="exercise-detail">- 每个动作做40秒，休息20秒</div>
+                    <div class="exercise-detail">- 完成一组循环后休息1分钟，共3-4组循环</div>
+                    <div class="exercise-detail">- 动作组合：开合跳、深蹲跳、爬山式、原地高抬腿</div>
+                </div>
+                <div class="exercise-item">
+                    <div class="exercise-title">拉伸 (5分钟)</div>
+                </div>
+                <a href="https://search.bilibili.com/all?keyword=帅soserious%20HIIT" class="bilibili-link">B站跟练视频推荐</a>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">🍽️ 三餐搭配</div>
+                <div class="meal-item">
+                    <div class="meal-title">早餐</div>
+                    <div class="meal-content">全麦馒头一小个 + 鸡蛋1个 + 黑咖啡一杯（可选）</div>
+                </div>
+                <div class="meal-item">
+                    <div class="meal-title">午餐</div>
+                    <div class="meal-content">瘦肉炒蔬菜（如西芹炒牛肉） + 少量米饭（半拳头）</div>
+                </div>
+                <div class="meal-item">
+                    <div class="meal-title">晚餐</div>
+                    <div class="meal-content">番茄菌菇汤 + 煎鸡胸肉（不加油或少油）</div>
+                </div>
+            </div>
+            
+            <div class="tip-box">
+                <div class="tip-title">核心提示</div>
+                <div>HIIT强度大，但后燃效应强，量力而行。保持水分补充。</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 周六 -->
+    <div class="day-card">
+        <div class="day-header">
+            <span>周六</span>
+            <span>趣味有氧</span>
+        </div>
+        <div class="day-content">
+            <div class="section">
+                <div class="section-title">🏃 运动计划</div>
+                <div class="exercise-item">
+                    <div class="exercise-title">趣味有氧或核心强化 (30-40分钟)</div>
+                    <div class="exercise-detail">- 选择B站喜欢的舞蹈有氧或趣味减脂操视频跟练</div>
+                    <div class="exercise-detail">- 或进行核心强化训练，动作同周五，增加组数</div>
+                </div>
+                <a href="https://search.bilibili.com/all?keyword=趣味%20减脂操" class="bilibili-link">B站跟练视频推荐</a>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">🍽️ 三餐搭配</div>
+                <div class="meal-item">
+                    <div class="meal-title">早餐</div>
+                    <div class="meal-content">可稍丰富，如蔬菜鸡蛋饼</div>
+                </div>
+                <div class="meal-item">
+                    <div class="meal-title">午餐</div>
+                    <div class="meal-content">外出就餐可选日式定食（烤鱼+米饭+味增汤）</div>
+                </div>
+                <div class="meal-item">
+                    <div class="meal-title">晚餐</div>
+                    <div class="meal-content">正常健康晚餐，享受烹饪乐趣</div>
+                </div>
+            </div>
+            
+            <div class="tip-box">
+                <div class="tip-title">核心提示</div>
+                <div>保持运动趣味性，有助于长期坚持。周末可适当放松饮食。</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 周日 -->
+    <div class="day-card">
+        <div class="day-header">
+            <span>周日</span>
+            <span>完全休息</span>
+        </div>
+        <div class="day-content">
+            <div class="section">
+                <div class="section-title">🏃 运动计划</div>
+                <div class="exercise-item">
+                    <div class="exercise-title">全天休息</div>
+                    <div class="exercise-detail">- 可进行轻柔的拉伸或散步</div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">🍽️ 三餐搭配</div>
+                <div class="meal-item">
+                    <div class="meal-title">早餐</div>
+                    <div class="meal-content">享受一顿丰盛但健康的早餐</div>
+                </div>
+                <div class="meal-item">
+                    <div class="meal-title">午餐</div>
+                    <div class="meal-content">正常健康午餐</div>
+                </div>
+                <div class="meal-item">
+                    <div class="meal-title">晚餐</div>
+                    <div class="meal-content">正常健康晚餐，七分饱</div>
+                </div>
+            </div>
+            
+            <div class="tip-box">
+                <div class="tip-title">核心提示</div>
+                <div>充分休息，准备迎接新一周。身体恢复同样重要。</div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>居家减脂塑形周计划 · 适合158cm/50.5kg女性</p>
+        <p>建议每周测量手臂、腰腹围度，关注身体变化</p>
+    </footer>
+</body>
+</html>
