@@ -1,95 +1,156 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#fff3d3">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="健身计划">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<link rel="apple-touch-icon" href="icon-180.png">
-<link rel="manifest" href="manifest.webmanifest">
-<title>主理人的训练计划</title>
-<style>
-:root{--bg:#fff3d3;--paper:#fff9e9;--ink:#4a2a1f;--soft:#9a6a56;--pink:#f56d8e;--pink2:#ffe0e8;--green:#62bd86;--green2:#e8f8df;--blue:#73b8ef;--blue2:#e4f3ff;--orange:#f4a64f;--orange2:#fff0cf;--line:#c99062;--red:#e94767;--shadow:0 6px 0 rgba(74,42,31,.16)}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.45;background:radial-gradient(circle at 20px 20px,rgba(255,255,255,.7) 0 8px,transparent 9px),linear-gradient(#fff7db,#fff0da 48%,#eaf8e9);background-size:44px 44px,100% 100%}button,input{font:inherit;color:inherit}button{cursor:pointer}img{image-rendering:pixelated}.app{max-width:430px;min-height:100vh;margin:auto;padding:max(12px,env(safe-area-inset-top)) 12px calc(88px + env(safe-area-inset-bottom))}.screen{display:none}.screen.on{display:block}.pixel-card{position:relative;margin-bottom:12px;border:2px solid var(--line);border-radius:14px;background:var(--paper);box-shadow:var(--shadow)}.pixel-card:before,.pixel-card:after{content:"";position:absolute;left:10px;right:10px;height:2px;background:rgba(201,144,98,.4)}.pixel-card:before{top:5px}.pixel-card:after{bottom:5px}.hero{min-height:196px;overflow:hidden;padding:18px 16px 92px;background:linear-gradient(#fff7db 0 58%,#dff5cf 58% 74%,#f9dfaf 74%);border-color:#e6b77e}.hero h1{margin:0;font-size:35px;line-height:1.02;color:var(--pink);letter-spacing:0;text-shadow:2px 2px 0 #ffd1dc}.hero h1 span{display:block;color:var(--ink);font-size:40px}.hero .tag{display:inline-flex;margin-top:10px;padding:6px 14px;border:2px solid #d6a46f;border-radius:999px;background:#fffdf1;color:var(--ink);font-weight:900}.hero .spark{position:absolute;color:#e9b73e;font-weight:900}.hero .s1{left:18px;top:66px}.hero .s2{left:205px;top:42px}.hero .s3{left:238px;top:86px}.hero .mascot{position:absolute;right:6px;top:18px;width:148px;border-radius:8px}.status{position:absolute;left:12px;right:12px;bottom:10px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;padding:10px;border:2px solid var(--line);border-radius:18px;background:#fffaf1}.stat{display:flex;gap:6px;align-items:center;justify-content:center;min-height:52px;border-right:2px dashed #f1c9a7}.stat:last-child{border-right:0}.stat img{width:34px;height:34px;object-fit:contain}.stat small{display:block;color:var(--soft);font-size:11px;font-weight:900}.stat b{display:block;font-size:22px;line-height:1.05}.section-title{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:0 0 10px;font-size:20px}.section-title strong{display:flex;align-items:center;gap:8px}.section-title img{width:32px;height:32px;object-fit:contain}.pill{display:inline-flex;align-items:center;justify-content:center;min-height:28px;padding:4px 10px;border:2px solid currentColor;border-radius:999px;background:#fff;font-size:12px;font-weight:900}.panel{padding:14px}.month-nav{display:flex;align-items:center;justify-content:space-between}.arrow{width:34px;height:34px;border:0;border-radius:9px;background:var(--green);color:#fff;font-size:20px;font-weight:900;box-shadow:inset 0 -3px 0 rgba(0,0,0,.15)}.month-label{min-width:160px;padding:6px 16px;border:2px solid #4e9c72;border-radius:999px;background:var(--green);color:#fff;text-align:center;font-weight:900;font-size:20px}.week,.calendar{display:grid;grid-template-columns:repeat(7,1fr);gap:7px}.week{margin:12px 0 8px;text-align:center;color:#6c4a39;font-size:12px;font-weight:900}.day{position:relative;min-height:40px;border:1.5px solid #f1d0a8;border-radius:8px;background:#fffef8;font-weight:900;box-shadow:inset 0 -2px 0 #fff1d8}.day span{position:absolute;left:50%;top:4px;transform:translateX(-50%)}.day i{position:absolute;left:50%;bottom:3px;transform:translateX(-50%);font-style:normal;color:var(--red);font-size:15px}.day.off{opacity:.45}.day.today{border-color:var(--red);box-shadow:0 0 0 2px #ffd7df}.day.selected{background:#ffe5ec}.day.full i{font-size:17px}.day.partial i{color:#e8b12b}.day.some i{color:#41a067}.legend{display:flex;justify-content:center;gap:14px;margin-top:10px;color:#6c4a39;font-size:12px;font-weight:800}.mini-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}.mini{padding:9px;border:2px solid #f0b39c;border-radius:10px;background:#fff0d7;text-align:center}.mini:nth-child(3){border-color:#8ec898;background:#e9f8df}.mini small{display:block;color:var(--soft);font-size:11px;font-weight:900}.mini b{font-size:26px}.task-card{overflow:hidden;border-color:#ef7992;background:#fff}.task-head{display:flex;align-items:center;justify-content:center;min-height:38px;background:linear-gradient(#f98aa1,#ef6785);color:#fff;font-size:18px;font-weight:900}.checks{display:grid;grid-template-columns:repeat(3,1fr);gap:0;padding:10px}.ck{position:relative;display:grid;justify-items:center;gap:5px;padding:4px;border-right:2px dashed #f5c8a8}.ck:last-child{border-right:0}.ck input{position:absolute;inset:0;width:100%;height:100%;opacity:0}.ck img{width:54px;height:58px;object-fit:contain}.ck b{font-size:14px}.ck small{color:var(--soft);font-size:11px}.box-check{width:34px;height:34px;border:2px solid #d4476b;border-radius:8px;background:#f36d8d;color:#fff;font-size:22px;font-weight:900;text-align:center;line-height:28px}.ck input:not(:checked)~.box-check{background:#fff;color:transparent}.cal-row{display:grid;grid-template-columns:1fr 108px;gap:10px;align-items:center;margin:0 10px 10px;padding:10px;border:2px solid #f4b8c7;border-radius:12px;background:#fff1f5}.cal-row label{display:block;font-weight:900}.cal-row small{display:block;color:var(--soft);font-size:12px}.cal-row input{width:100%;min-height:42px;border:2px solid #d99aa9;border-radius:10px;background:#fff;text-align:center;font-size:20px;font-weight:900}.shortcuts{display:grid;grid-template-columns:1fr 1fr;gap:10px}.shortcut{display:grid;min-height:126px;padding:10px;border:2px solid;border-radius:13px;text-decoration:none}.shortcut.green{border-color:#6bb781;background:#eaf8dc}.shortcut.orange{border-color:#eeae5d;background:#fff1cd}.shortcut h3{margin:0 0 8px;color:#fff;text-shadow:1px 1px 0 rgba(0,0,0,.18);font-size:20px}.shortcut.green h3{color:#41a067}.shortcut.orange h3{color:#d88128}.shortcut ul{margin:0;padding-left:18px;color:#5f4437;font-size:13px}.cta-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}.btn{display:flex;min-height:52px;align-items:center;justify-content:center;border:0;border-radius:12px;text-decoration:none;font-weight:900;box-shadow:inset 0 -4px 0 rgba(0,0,0,.15)}.btn.primary{background:linear-gradient(#f9839d,#e94f75);color:#fff;font-size:18px}.btn.ghost{background:#fff;border:2px solid #d8aa7b;color:var(--ink)}.plan-list{display:grid;gap:8px}.plan-row{display:grid;grid-template-columns:52px 1fr 34px;gap:8px;align-items:center;min-height:58px;padding:8px;border:2px solid #d6c29f;border-radius:12px;background:#fff}.plan-row.on{border-color:#e76c88;background:#fff0f4}.date-chip{padding:4px;border:1px solid #e0c49f;border-radius:8px;background:#fff8e7;text-align:center;font-size:12px;font-weight:900}.plan-main b{display:block}.plan-main small{color:var(--soft);font-weight:800}.ok{display:grid;place-items:center;width:30px;height:30px;border-radius:7px;background:#79c58b;color:#fff;font-weight:900}.meal-card{display:grid;grid-template-columns:64px 1fr;gap:10px;align-items:center;margin-bottom:10px;padding:10px;border:2px solid;border-radius:12px;background:#fff}.meal-card.pink{border-color:#f38ca0}.meal-card.orange{border-color:#eda95e}.meal-card.blue{border-color:#82bfed}.meal-card img{width:58px;height:52px;object-fit:contain}.meal-card h3{margin:0 0 4px}.meal-card p{margin:0;color:var(--soft);font-size:13px}.macro{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;padding:8px;border:2px solid #9ccc9d;border-radius:10px;background:#edf9df;text-align:center}.macro b{display:block;color:#317a55}.macro small{color:var(--soft);font-size:11px}.nav{position:fixed;left:50%;bottom:10px;z-index:20;display:grid;grid-template-columns:repeat(4,1fr);gap:4px;width:min(calc(100% - 22px),420px);padding:7px;border:2px solid #b98158;border-radius:18px;background:rgba(255,251,239,.96);box-shadow:0 5px 18px rgba(74,42,31,.16);transform:translateX(-50%);backdrop-filter:blur(12px)}.tab{min-height:58px;border:0;border-radius:14px;background:transparent;color:var(--ink);font-size:12px;font-weight:900}.tab img{display:block;width:28px;height:28px;margin:0 auto 2px;object-fit:contain}.tab.on{background:#ffd5dd;color:#be3757}.note{margin:13px 4px 0;color:var(--soft);font-size:12px;text-align:center}@media(min-width:700px){.app{max-width:680px}.shortcuts{grid-template-columns:1fr 1fr}.calendar .day{min-height:52px}}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#fff5de">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="训练计划">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="icon" href="icon-192.png">
+  <link rel="apple-touch-icon" href="icon-180.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <title>主理人的训练计划</title>
+  <style>
+    :root{
+      --bg:#fff5de;--paper:#fff9ec;--ink:#4a2d22;--muted:#9a7664;--line:#6b3e2e;
+      --soft:#e7b977;--pink:#ff7f9a;--pink2:#ffd3db;--red:#e95f72;--green:#78c58b;
+      --green2:#dff5d9;--blue:#80c7f2;--blue2:#e4f4ff;--yellow:#ffd978;--orange:#ffb45b;
+      --shadow:0 5px 0 rgba(107,62,46,.15),0 12px 24px rgba(107,62,46,.08);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
+      background:linear-gradient(#fff8e9,#fff2d7 46%,#eaf8df);line-height:1.35;
+    }
+    button,input{font:inherit;color:inherit}button{cursor:pointer}img{image-rendering:pixelated}
+    .app{max-width:430px;min-height:100vh;margin:auto;padding:max(14px,env(safe-area-inset-top)) 12px calc(88px + env(safe-area-inset-bottom))}
+    .screen{display:none}.screen.on{display:block}
+    .card{position:relative;margin-bottom:12px;border:2px solid var(--line);border-radius:14px;background:var(--paper);box-shadow:var(--shadow)}
+    .card:before,.card:after{content:"";position:absolute;left:12px;right:12px;height:1px;background:rgba(231,185,119,.55)}
+    .card:before{top:6px}.card:after{bottom:6px}
+    .panel{padding:14px}
+    .hero{min-height:236px;overflow:hidden;padding:24px 18px;background:linear-gradient(#fff5de 0 57%,#dff5d9 57% 74%,#f5dcaa 74%)}
+    .hero h1{position:relative;z-index:2;margin:4px 0 8px;font-size:31px;line-height:1.08;letter-spacing:0;color:var(--pink);text-shadow:2px 2px 0 #ffdce4}
+    .hero h1 span{display:block;color:var(--ink)}
+    .bubble{position:relative;z-index:2;display:inline-flex;max-width:210px;min-height:28px;align-items:center;justify-content:center;padding:5px 14px;border:2px solid var(--pink);border-radius:999px;background:#fffdf4;font-size:12px;font-weight:800}
+    .hero-girl{position:absolute;right:12px;top:24px;width:150px;max-height:168px;object-fit:contain}
+    .spark{position:absolute;width:18px;height:18px}
+    .spark:before,.spark:after{content:"";position:absolute;background:var(--yellow)}.spark:before{left:7px;top:0;width:4px;height:18px}.spark:after{left:0;top:7px;width:18px;height:4px}
+    .spark.s1{left:260px;top:42px}.spark.s2{right:28px;top:72px}
+    .pixel-heart{width:22px;height:22px;display:inline-grid;grid-template-columns:repeat(5,1fr);grid-template-rows:repeat(5,1fr);gap:0}
+    .pixel-heart i{background:var(--pink)}
+    .pixel-heart i:nth-child(2),.pixel-heart i:nth-child(4),.pixel-heart i:nth-child(n+6):nth-child(-n+10),.pixel-heart i:nth-child(n+11):nth-child(-n+15),.pixel-heart i:nth-child(17),.pixel-heart i:nth-child(18),.pixel-heart i:nth-child(19),.pixel-heart i:nth-child(23){display:block}
+    .pixel-heart i:not(:nth-child(2)):not(:nth-child(4)):not(:nth-child(n+6):nth-child(-n+10)):not(:nth-child(n+11):nth-child(-n+15)):not(:nth-child(17)):not(:nth-child(18)):not(:nth-child(19)):not(:nth-child(23)){opacity:0}
+    .summary{position:absolute;left:20px;right:20px;bottom:16px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;padding:12px;border:2px solid var(--line);border-radius:16px;background:rgba(255,249,236,.96)}
+    .sum-item{min-width:0;text-align:center;border-right:1px dashed #e9bda0}.sum-item:last-child{border-right:0}
+    .sum-item small{display:block;color:var(--muted);font-size:11px;font-weight:800}.sum-item b{display:block;font-size:24px;line-height:1.1}.sum-item em{font-size:10px;color:var(--muted);font-style:normal}
+    .bar{height:10px;border:1px solid var(--soft);border-radius:999px;background:#ffe4d5;overflow:hidden}.bar span{display:block;height:100%;background:var(--pink)}
+    .title{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:0 0 12px;font-size:20px}
+    .title strong{display:flex;align-items:center;gap:8px}.title img{width:34px;height:34px;object-fit:contain}.pill{display:inline-flex;min-height:28px;align-items:center;justify-content:center;padding:4px 10px;border:2px solid currentColor;border-radius:999px;background:#fff;font-size:12px;font-weight:900}
+    .task-head{display:flex;align-items:center;justify-content:space-between;min-height:40px;padding:0 14px;border-bottom:2px solid var(--red);border-radius:12px 12px 0 0;background:linear-gradient(#ff8da5,#e95f72);color:#fff;font-weight:900}
+    .checks{display:grid;grid-template-columns:repeat(3,1fr);padding:12px 8px 10px}
+    .check{position:relative;display:grid;justify-items:center;gap:4px;padding:3px;border-right:1px dashed #eebc9d}.check:last-child{border-right:0}
+    .check input{position:absolute;inset:0;opacity:0}.check img{width:64px;height:56px;object-fit:contain}.check b{font-size:13px}.check small{color:var(--muted);font-size:10px}
+    .box{display:grid;place-items:center;width:28px;height:28px;border:2px solid var(--red);border-radius:8px;background:var(--red);color:#fff;font-size:18px;font-weight:900}.check input:not(:checked)~.box{background:#fff;color:transparent}
+    .cal-input{display:grid;grid-template-columns:1fr 112px;gap:10px;align-items:center;margin:0 12px 14px;padding:10px;border:2px solid #efa4b5;border-radius:12px;background:#fff4f7}
+    .cal-input label{font-weight:900}.cal-input small{display:block;color:var(--muted);font-size:12px}.cal-input input{width:100%;min-height:44px;border:2px solid #d99aa9;border-radius:10px;background:#fff;text-align:center;font-size:20px;font-weight:900}
+    .month-nav{display:flex;align-items:center;justify-content:space-between}.month-label{min-width:150px;padding:6px 14px;border-radius:999px;background:var(--green);color:#fff;text-align:center;font-weight:900}.arrow{width:34px;height:34px;border:0;border-radius:10px;background:var(--green);color:#fff;font-size:20px;font-weight:900;box-shadow:inset 0 -3px 0 rgba(0,0,0,.15)}
+    .week,.calendar{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}.week{margin:12px 0 8px;text-align:center;font-size:12px;font-weight:900;color:#6c4a39}
+    .day{position:relative;min-height:42px;border:1.5px solid #f1d0a8;border-radius:8px;background:#fffef8;font-weight:900}.day span{position:absolute;left:50%;top:5px;transform:translateX(-50%)}.day i{position:absolute;left:50%;bottom:4px;transform:translateX(-50%);font-style:normal;color:var(--pink)}
+    .day.off{opacity:.35}.day.today{border-color:var(--red);box-shadow:0 0 0 2px #ffd3db}.day.selected{background:#ffe6ec}.day.some i{color:var(--green)}.day.partial i{color:#e8af25}
+    .legend{display:flex;justify-content:center;gap:12px;margin-top:10px;color:var(--muted);font-size:12px;font-weight:800}
+    .mini-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}.mini{padding:9px;border:2px solid #f0b39c;border-radius:10px;background:#fff0d7;text-align:center}.mini:nth-child(3){border-color:#8ec898;background:#e9f8df}.mini small{display:block;color:var(--muted);font-size:11px;font-weight:900}.mini b{font-size:25px}
+    .shortcuts{display:grid;grid-template-columns:1fr 1fr;gap:10px}.shortcut{min-height:126px;padding:12px;border:2px solid;border-radius:13px;text-decoration:none}.shortcut.green{border-color:var(--green);background:var(--green2)}.shortcut.orange{border-color:var(--orange);background:#fff0cf}.shortcut h3{margin:0 0 8px;font-size:19px}.shortcut.green h3{color:#3f9a67}.shortcut.orange h3{color:#ce7726}.shortcut ul{margin:0;padding-left:17px;color:#5f4437;font-size:13px}
+    .cta-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}.btn{display:flex;min-height:50px;align-items:center;justify-content:center;border:0;border-radius:12px;text-decoration:none;font-weight:900;box-shadow:inset 0 -4px 0 rgba(0,0,0,.14)}.btn.primary{background:linear-gradient(#ff849d,#e95f72);color:#fff}.btn.ghost{background:#fff;border:2px solid #d8aa7b;color:var(--ink)}
+    .plan-list{display:grid;gap:8px}.plan-row{display:grid;grid-template-columns:54px 46px 1fr 30px;gap:8px;align-items:center;min-height:62px;padding:8px;border:2px solid #d6c29f;border-radius:12px;background:#fff}.plan-row.on{border-color:var(--red);background:#fff0f4}.plan-row img{width:44px;height:44px;object-fit:contain}.date-chip{padding:4px;border:1px solid #e0c49f;border-radius:8px;background:#fff8e7;text-align:center;font-size:12px;font-weight:900}.plan-main b{display:block}.plan-main small{color:var(--muted);font-weight:800}.ok{display:grid;place-items:center;width:28px;height:28px;border-radius:7px;background:var(--green2);border:2px solid var(--green);color:var(--green);font-weight:900}
+    .meal-card{display:grid;grid-template-columns:64px 1fr;gap:10px;align-items:center;margin-bottom:10px;padding:10px;border:2px solid;border-radius:12px;background:#fff}.meal-card.pink{border-color:var(--pink);background:#fff3f5}.meal-card.orange{border-color:var(--orange);background:#fff7e5}.meal-card.blue{border-color:var(--blue);background:#eaf6ff}.meal-card img{width:58px;height:52px;object-fit:contain}.meal-card h3{margin:0 0 4px}.meal-card p{margin:0;color:var(--muted);font-size:13px}
+    .macro{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;padding:8px;border:2px solid #9ccc9d;border-radius:10px;background:#edf9df;text-align:center}.macro b{display:block;color:#317a55}.macro small{color:var(--muted);font-size:11px}
+    .nav{position:fixed;left:50%;bottom:10px;z-index:20;display:grid;grid-template-columns:repeat(4,1fr);gap:4px;width:min(calc(100% - 22px),420px);padding:7px;border:2px solid #b98158;border-radius:18px;background:rgba(255,251,239,.96);box-shadow:0 5px 18px rgba(74,42,31,.16);transform:translateX(-50%);backdrop-filter:blur(12px)}
+    .tab{min-height:58px;border:0;border-radius:14px;background:transparent;color:var(--ink);font-size:12px;font-weight:900}.tab-icon{display:grid;place-items:center;width:26px;height:24px;margin:0 auto 2px;border:2px solid var(--line);border-radius:6px;background:#fff}.tab.on{background:#ffd5dd;color:#be3757}
+    .note{margin:13px 4px 0;color:var(--muted);font-size:12px;text-align:center}
+  </style>
 </head>
 <body>
-<main class="app">
-  <section id="today" class="screen on"></section>
-  <section id="calendar" class="screen"></section>
-  <section id="plan" class="screen"></section>
-  <section id="meals" class="screen"></section>
-  <p class="note">数据只保存在你自己的手机浏览器里。用 Safari 添加到主屏幕后就是你的私人健身小应用。</p>
-</main>
-
-<nav class="nav" aria-label="底部导航">
-  <button class="tab on" data-tab="today"><img src="assets/home-icon.png" alt="">今日</button>
-  <button class="tab" data-tab="calendar"><img src="assets/calendar-icon.png" alt="">日历</button>
-  <button class="tab" data-tab="plan"><img src="assets/plan-icon.png" alt="">计划</button>
-  <button class="tab" data-tab="meals"><img src="assets/meal-icon.png" alt="">餐谱</button>
-</nav>
-
-<script>
-const planData=[
-{d:"周一",t:"全身塑形",f:"力量",time:"40 分钟",level:"中等",q:"全身塑形 无器械 跟练",r:[["热身",["关节活动各 20 秒","开合跳 40 秒","高抬腿 40 秒"]],["全身力量",["深蹲 3 组 x 12-15 次","跪姿俯卧撑 3 组","交替弓步蹲 3 组","平板支撑 30-45 秒","仰卧臀桥 3 组"]],["拉伸",["大腿、臀部、胸部和手臂 5 分钟"]]],m:["水煮蛋 + 全麦面包 + 无糖牛奶/豆浆","糙米饭 + 清蒸鸡胸/鱼肉 + 清炒蔬菜","蒸红薯 + 豆腐菌菇汤 + 凉拌菠菜"]},
-{d:"周二",t:"有氧燃脂",f:"心肺",time:"35 分钟",level:"中等",q:"低冲击有氧 燃脂 跟练",r:[["热身",["动态拉伸 5 分钟"]],["持续有氧",["低冲击有氧操 30 分钟","保持稳定呼吸"]],["拉伸",["大腿后侧、小腿和腰部 5 分钟"]]],m:["燕麦粥 + 鸡蛋 + 半个水果","杂粮饭 + 烤瘦肉 + 大份蔬菜沙拉","杂粮粥 + 清炒虾仁 + 西兰花"]},
-{d:"周三",t:"恢复",f:"恢复",time:"20 分钟",level:"低强度",q:"全身拉伸 瑜伽 放松",r:[["轻量活动",["全身拉伸、瑜伽或散步","也可以完全休息"]],["呼吸放松",["睡前 3-5 分钟腹式呼吸"]]],m:["沿用周一，可换玉米","沿用周二，可加蒸豆腐","冬瓜汤 + 优质蛋白"]},
-{d:"周四",t:"上肢核心",f:"塑形",time:"40 分钟",level:"中等",q:"手臂 核心 无器械 跟练",r:[["热身",["手臂画圈、肩部环绕"]],["核心训练",["窄距跪姿俯卧撑 3 组","俯身 YTW 2 组","仰卧卷腹 3 组","交替抬腿 3 组","俄罗斯转体 3 组"]],["拉伸",["胸、肩、腹和背 5 分钟"]]],m:["无糖酸奶 + 坚果 + 燕麦片","鸡胸肉沙拉 + 油醋汁","清蒸鱼 + 凉拌秋葵"]},
-{d:"周五",t:"HIIT 燃脂",f:"燃脂",time:"25 分钟",level:"高强度",q:"低冲击 HIIT 燃脂 跟练",r:[["开合跳",["40 秒 x 3 组"]],["深蹲跳",["40 秒 x 3 组"]],["波比跳",["40 秒 x 3 组"]],["休息",["60 秒"]]],m:["全麦馒头 + 鸡蛋 + 黑咖啡可选","瘦肉炒蔬菜 + 少量米饭","番茄菌菇汤 + 煎鸡胸肉"]},
-{d:"周六",t:"趣味有氧",f:"快乐",time:"30 分钟",level:"中等",q:"趣味有氧 减脂操 跟练",r:[["自选有氧",["舞蹈有氧或趣味燃脂操"]],["轻拉伸",["小腿、臀腿和肩颈 5 分钟"]]],m:["蔬菜鸡蛋饼","日式定食：烤鱼 + 米饭 + 味噌汤","正常健康晚餐，七分饱"]},
-{d:"周日",t:"休息",f:"修复",time:"散步/拉伸",level:"低强度",q:"全身放松 拉伸 恢复",r:[["全天休息",["可散步、泡沫轴放松或轻柔拉伸"]],["复盘",["记录睡眠、围度和体感变化"]]],m:["丰富但健康的早餐","正常健康午餐","正常健康晚餐，七分饱"]}
-];
-const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
-let selected=iso(new Date()),month=new Date();
-const kinds=["warmup","training","stretch"],kindNames=["热身","训练","拉伸"],kindImgs=["warmup.png","training.png","stretch.png"];
-function iso(d){return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`}
-function dateOf(s){let [y,m,d]=s.split("-").map(Number);return new Date(y,m-1,d)}
-function pidx(d){let x=d.getDay();return x?x-1:6}
-function key(day,k){return `fit-pixel-art-${day}-${k}`}
-function done(day,k){return localStorage.getItem(key(day,k))==="1"}
-function count(day){return kinds.filter(k=>done(day,k)).length}
-function cal(day){return Number(localStorage.getItem(key(day,"cal"))||0)}
-function setDone(day,k,on){localStorage.setItem(key(day,k),on?"1":"0");render()}
-function setCal(day,v){localStorage.setItem(key(day,"cal"),String(Math.max(0,Number(v)||0)));render(false)}
-function checkedTasks(day){return kinds.map((k,i)=>`<label class="ck"><input type="checkbox" data-kind="${k}" ${done(day,k)?"checked":""}><img src="assets/${kindImgs[i]}" alt=""><b>${kindNames[i]}</b><small>${i===0?"10":i===1?"25":"10"} 分钟</small><span class="box-check">✓</span></label>`).join("")}
-function hero(){
- let today=iso(new Date()),dc=count(today),week=weekRate(),monthCal=monthCalories(new Date());
- return `<section class="pixel-card hero"><span class="spark s1">✦</span><span class="spark s2">✦</span><span class="spark s3">❤</span><h1>主理人的<span>训练计划</span></h1><div class="tag">❤ 今天也要元气满满哦！</div><img class="mascot" src="assets/mascot.png" alt=""><div class="status"><div class="stat"><img src="assets/heart.png" alt=""><span><small>今日完成</small><b>${dc}/3</b></span></div><div class="stat"><span><small>消耗热量</small><b>${cal(today)}</b></span></div><div class="stat"><span><small>本周</small><b>${week}%</b></span></div></div></section>`;
-}
-function renderToday(){
- const p=planData[pidx(dateOf(selected))];
- $("#today").innerHTML=`${hero()}<section class="pixel-card task-card"><div class="task-head">${selected.slice(5).replace("-","月")}日 · ${p.t}</div><div class="checks">${checkedTasks(selected)}</div><div class="cal-row"><div><label>Apple Watch 运动卡路里</label><small>把健身记录里的当天消耗填进来</small></div><input id="calInput" type="number" inputmode="numeric" min="0" value="${cal(selected)}"></div></section><section class="shortcuts"><a class="shortcut green" data-goto="plan"><h3>运动计划</h3><ul>${p.r.slice(0,3).map(x=>`<li>${x[0]} · ${Array.isArray(x[1])?x[1][0]:x[1]}</li>`).join("")}</ul></a><a class="shortcut orange" data-goto="meals"><h3>三餐搭配</h3><ul><li>早餐 · ${p.m[0].split("+")[0]}</li><li>午餐 · ${p.m[1].split("+")[0]}</li><li>晚餐 · ${p.m[2].split("+")[0]}</li></ul></a></section><div class="cta-row"><a class="btn primary" target="_blank" rel="noopener" href="https://search.bilibili.com/all?keyword=${encodeURIComponent(p.q)}">B站跟练 ▶</a><button class="btn ghost" id="clearDay">清空当天</button></div>`;
- bindChecks("#today"); $("#calInput").oninput=e=>setCal(selected,e.target.value); $("#clearDay").onclick=()=>{kinds.forEach(k=>localStorage.removeItem(key(selected,k)));localStorage.removeItem(key(selected,"cal"));render()}; $$("[data-goto]").forEach(x=>x.onclick=()=>switchTab(x.dataset.goto));
-}
-function renderCalendar(){
- const y=month.getFullYear(),m=month.getMonth(),first=new Date(y,m,1),start=(first.getDay()+6)%7,days=new Date(y,m+1,0).getDate(),today=iso(new Date());
- let cells=[]; for(let i=0;i<start;i++)cells.push(`<button class="day off"></button>`);
- for(let d=1;d<=days;d++){let ds=iso(new Date(y,m,d)),c=count(ds),cls=c===3?"full":c===2?"partial":c===1?"some":"";cells.push(`<button class="day ${cls} ${ds===today?"today":""} ${ds===selected?"selected":""}" data-date="${ds}"><span>${d}</span><i>${c===3?"❤":c===2?"★":c===1?"✔":""}</i></button>`)}
- let dates=[...Array(days)].map((_,i)=>iso(new Date(y,m,i+1))),full=dates.filter(d=>count(d)===3).length,rate=Math.round(dates.reduce((s,d)=>s+count(d),0)/(days*3)*100),mc=dates.reduce((s,d)=>s+cal(d),0);
- $("#calendar").innerHTML=`${hero()}<section class="pixel-card panel"><div class="month-nav"><button class="arrow" id="prevM">←</button><div class="month-label">${y} 年 ${m+1} 月</div><button class="arrow" id="nextM">→</button></div><div class="week">${["一","二","三","四","五","六","日"].map(x=>`<div>${x}</div>`).join("")}</div><div class="calendar">${cells.join("")}</div><div class="legend"><span>❤ 完成</span><span>★ 超棒</span><span>✔ 部分完成</span></div><div class="mini-stats"><div class="mini"><small>满格</small><b>${full}</b></div><div class="mini"><small>完成率</small><b>${rate}%</b></div><div class="mini"><small>卡路里</small><b>${mc}</b></div></div></section><section class="pixel-card task-card"><div class="task-head">${selected} · ${planData[pidx(dateOf(selected))].t}</div><div class="checks">${checkedTasks(selected)}</div><div class="cal-row"><div><label>运动卡路里</label><small>当天记录</small></div><input id="calMini" type="number" min="0" value="${cal(selected)}"></div></section>`;
- $("#prevM").onclick=()=>{month=new Date(y,m-1,1);render(false)}; $("#nextM").onclick=()=>{month=new Date(y,m+1,1);render(false)}; $$("#calendar .day[data-date]").forEach(b=>b.onclick=()=>{selected=b.dataset.date;render()}); bindChecks("#calendar"); $("#calMini").oninput=e=>setCal(selected,e.target.value);
-}
-function renderPlan(){
- const active=pidx(dateOf(selected));
- $("#plan").innerHTML=`${hero()}<section class="pixel-card panel"><h2 class="section-title"><strong><img src="assets/dumbbell.png" alt="">本周训练计划</strong><span class="pill">7天</span></h2><div class="plan-list">${planData.map((p,i)=>`<button class="plan-row ${i===active?"on":""}" data-plan="${i}"><span class="date-chip">${p.d}<br><small>05.${String(12+i).padStart(2,"0")}</small></span><span class="plan-main"><b>${p.t}</b><small>${p.time} · ${p.level}</small></span><span class="ok">✓</span></button>`).join("")}</div></section><section class="pixel-card panel">${planDetail()}</section>`;
- $$("#plan [data-plan]").forEach(b=>b.onclick=()=>{let d=dateOf(selected),diff=+b.dataset.plan-pidx(d);d.setDate(d.getDate()+diff);selected=iso(d);render()});
-}
-function planDetail(){let p=planData[pidx(dateOf(selected))];return `<h2 class="section-title"><strong>${p.d} · ${p.t}</strong><span class="pill">${p.level}</span></h2><div class="plan-list">${p.r.map(x=>`<div class="plan-row"><span class="date-chip">✦</span><span class="plan-main"><b>${x[0]}</b><small>${x[1].join(" · ")}</small></span><span></span></div>`).join("")}</div><div class="cta-row"><a class="btn primary" target="_blank" rel="noopener" href="https://search.bilibili.com/all?keyword=${encodeURIComponent(p.q)}">开始训练 ▶</a><button class="btn ghost" onclick="switchTab('today')">去打卡</button></div>`}
-function renderMeals(){
- const p=planData[pidx(dateOf(selected))];
- $("#meals").innerHTML=`${hero()}<section class="pixel-card panel"><h2 class="section-title"><strong><img src="assets/food-bowl.png" alt="">今日三餐搭配</strong><span class="pill">${selected.slice(5)}</span></h2>${meal("pink","food-breakfast.png","早餐","7:30",p.m[0])}${meal("orange","food-lunch.png","午餐","12:30",p.m[1])}${meal("blue","food-dinner.png","晚餐","18:30",p.m[2])}<div class="macro"><span><b>蛋白</b><small>105g</small></span><span><b>蔬菜</b><small>350g</small></span><span><b>主食</b><small>120g</small></span><span><b>饮水</b><small>1500ml</small></span></div></section><section class="pixel-card panel"><h2 class="section-title"><strong>轻食灵感</strong><span class="pill">换一换</span></h2><div class="plan-list"><div class="plan-row"><span class="date-chip">🥗</span><span class="plan-main"><b>低脂蛋白</b><small>鸡胸、鱼肉、虾仁、鸡蛋、豆腐轮换。</small></span><span></span></div><div class="plan-row"><span class="date-chip">🍚</span><span class="plan-main"><b>温柔碳水</b><small>糙米、玉米、红薯、燕麦按训练强度增减。</small></span><span></span></div></div></section>`;
-}
-function meal(cls,img,title,time,text){return `<div class="meal-card ${cls}"><img src="assets/${img}" alt=""><div><h3>${title}</h3><p><b>${time}</b>　${text}</p></div></div>`}
-function bindChecks(scope){$$(`${scope} input[type=checkbox]`).forEach(i=>i.onchange=()=>setDone(selected,i.dataset.kind,i.checked))}
-function weekRate(){let n=new Date(),start=new Date(n);start.setDate(n.getDate()-((n.getDay()+6)%7));let total=0;for(let i=0;i<7;i++){let d=new Date(start);d.setDate(start.getDate()+i);total+=count(iso(d))}return Math.round(total/21*100)}
-function monthCalories(d){let y=d.getFullYear(),m=d.getMonth(),days=new Date(y,m+1,0).getDate(),total=0;for(let i=1;i<=days;i++)total+=cal(iso(new Date(y,m,i)));return total}
-function switchTab(name){$$(".screen").forEach(s=>s.classList.toggle("on",s.id===name));$$(".tab").forEach(t=>t.classList.toggle("on",t.dataset.tab===name));scrollTo({top:0,behavior:"smooth"})}
-function render(redrawToday=true){renderToday();renderCalendar();renderPlan();renderMeals()}
-$$(".tab").forEach(t=>t.onclick=()=>switchTab(t.dataset.tab));
-render();
-if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js").catch(()=>{});
-</script>
+  <main class="app">
+    <section id="today" class="screen on"></section>
+    <section id="calendar" class="screen"></section>
+    <section id="plan" class="screen"></section>
+    <section id="meals" class="screen"></section>
+    <p class="note">数据只保存在你自己的手机浏览器里。用 Safari 添加到主屏幕后，就会像一个私人健身小应用。</p>
+  </main>
+  <nav class="nav" aria-label="底部导航">
+    <button class="tab on" data-tab="today"><span class="tab-icon">⌂</span>今日</button>
+    <button class="tab" data-tab="calendar"><span class="tab-icon">▣</span>日历</button>
+    <button class="tab" data-tab="plan"><span class="tab-icon">☷</span>计划</button>
+    <button class="tab" data-tab="meals"><span class="tab-icon">◉</span>餐谱</button>
+  </nav>
+  <script>
+    const plans=[
+      {d:"周一",t:"全身塑形",time:"40 分钟",level:"中等",img:"hero",q:"全身塑形 无器械 跟练",meals:["水煮蛋 + 全麦面包 + 豆浆","糙米饭 + 蒸鸡胸 + 清炒蔬菜","蒸红薯 + 豆腐菌菇汤"],steps:["关节热身 5 分钟","深蹲 3 组","跪姿俯卧撑 3 组","平板支撑 45 秒"]},
+      {d:"周二",t:"有氧燃脂",time:"35 分钟",level:"中等",img:"stretch",q:"低冲击 有氧燃脂 跟练",meals:["燕麦粥 + 鸡蛋 + 蓝莓","杂粮饭 + 烤瘦肉 + 沙拉","杂粮粥 + 清炒虾仁"],steps:["动态拉伸 5 分钟","低冲击有氧 30 分钟","小腿和腰部拉伸"]},
+      {d:"周三",t:"恢复",time:"20 分钟",level:"低强度",img:"thumb",q:"全身拉伸 瑜伽 放松",meals:["酸奶 + 坚果 + 水果","鸡胸肉沙拉 + 油醋汁","冬瓜汤 + 优质蛋白"],steps:["全身拉伸","散步 20 分钟","睡前呼吸放松"]},
+      {d:"周四",t:"上肢核心",time:"40 分钟",level:"中等",img:"dumbbell",q:"手臂 核心 无器械 跟练",meals:["无糖酸奶 + 燕麦","鸡胸肉沙拉","清蒸鱼 + 凉拌秋葵"],steps:["手臂画圈热身","窄距跪姿俯卧撑","仰卧卷腹","俄罗斯转体"]},
+      {d:"周五",t:"HIIT 燃脂",time:"25 分钟",level:"高强度",img:"plank",q:"低冲击 HIIT 燃脂 跟练",meals:["全麦馒头 + 鸡蛋","瘦肉炒蔬菜 + 少量米饭","番茄菌菇汤 + 鸡胸肉"],steps:["开合跳 40 秒 x 3","深蹲跳 40 秒 x 3","波比跳 40 秒 x 3","休息 60 秒"]},
+      {d:"周六",t:"趣味有氧",time:"30 分钟",level:"中等",img:"hero",q:"趣味有氧 减脂操 跟练",meals:["蔬菜鸡蛋饼","烤鱼 + 米饭 + 味噌汤","七分饱健康晚餐"],steps:["任选有氧 30 分钟","轻柔拉伸","记录体感"]},
+      {d:"周日",t:"休息日",time:"拉伸 / 散步",level:"低强度",img:"stretch",q:"全身放松 拉伸 恢复",meals:["丰富但健康的早餐","正常健康午餐","正常健康晚餐"],steps:["全身休息","散步或泡沫轴","复盘一周"]}
+    ];
+    const kinds=["warmup","training","stretch"],kindNames=["热身","训练","拉伸"],kindImgs=["girl-warmup.png","girl-dumbbell.png","girl-stretch.png"];
+    const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+    let selected=iso(new Date()),month=new Date();
+    function iso(d){return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`}
+    function dateOf(s){let [y,m,d]=s.split("-").map(Number);return new Date(y,m-1,d)}
+    function weekday(d){let n=d.getDay();return n?n-1:6}
+    function key(day,k){return `pixel-fit-${day}-${k}`}
+    function done(day,k){return localStorage.getItem(key(day,k))==="1"}
+    function setDone(day,k,on){localStorage.setItem(key(day,k),on?"1":"0");render()}
+    function count(day){return kinds.filter(k=>done(day,k)).length}
+    function calories(day){return Number(localStorage.getItem(key(day,"calories"))||0)}
+    function setCalories(day,value){localStorage.setItem(key(day,"calories"),String(Math.max(0,Number(value)||0)));render(false)}
+    function pct(){let total=0;for(let i=0;i<7;i++){let d=new Date();d.setDate(d.getDate()-weekday(new Date())+i);total+=count(iso(d))}return Math.round(total/21*100)}
+    function hero(){
+      const today=iso(new Date()),c=count(today);
+      return `<section class="card hero"><span class="spark s1"></span><span class="spark s2"></span><h1>主理人的<span>训练计划</span></h1><div class="bubble">今天也要元气满满哦</div><img class="hero-girl" src="assets/characters/girl-hero.png" alt="像素健身女孩"><div class="summary"><div class="sum-item"><small>今日完成</small><b>${c}/3</b><div class="bar"><span style="width:${c/3*100}%"></span></div></div><div class="sum-item"><small>运动卡路里</small><b>${calories(today)}</b><em>kcal</em></div><div class="sum-item"><small>本周完成率</small><b>${pct()}%</b><div class="bar"><span style="width:${pct()}%"></span></div></div></div></section>`
+    }
+    function checks(day){
+      return kinds.map((k,i)=>`<label class="check"><input type="checkbox" data-kind="${k}" ${done(day,k)?"checked":""}><img src="assets/characters/${kindImgs[i]}" alt="${kindNames[i]}"><b>${kindNames[i]}</b><small>${i===1?"25":"10"} 分钟</small><span class="box">✓</span></label>`).join("");
+    }
+    function bindChecks(root){$$(`${root} input[data-kind]`).forEach(input=>input.onchange=e=>setDone(selected,e.target.dataset.kind,e.target.checked))}
+    function renderToday(){
+      const p=plans[weekday(dateOf(selected))];
+      $("#today").innerHTML=`${hero()}<section class="card"><div class="task-head"><span>${selected.slice(5).replace("-","月")}日 · ${p.t}</span><span>${count(selected)}/3</span></div><div class="checks">${checks(selected)}</div><div class="cal-input"><div><label>Apple Watch 运动卡路里</label><small>把手表健身记录里的消耗填进来</small></div><input id="calInput" type="number" inputmode="numeric" min="0" value="${calories(selected)}"></div></section><section class="shortcuts"><a class="shortcut green" data-goto="plan"><h3>运动计划</h3><ul>${p.steps.slice(0,3).map(x=>`<li>${x}</li>`).join("")}</ul></a><a class="shortcut orange" data-goto="meals"><h3>三餐搭配</h3><ul>${p.meals.map(x=>`<li>${x}</li>`).join("")}</ul></a></section><div class="cta-row"><a class="btn primary" target="_blank" rel="noopener" href="https://search.bilibili.com/all?keyword=${encodeURIComponent(p.q)}">B站跟练 ▶</a><button class="btn ghost" id="clearDay">清空当天</button></div>`;
+      bindChecks("#today");
+      $("#calInput").oninput=e=>setCalories(selected,e.target.value);
+      $("#clearDay").onclick=()=>{kinds.forEach(k=>localStorage.removeItem(key(selected,k)));localStorage.removeItem(key(selected,"calories"));render()};
+      $$("[data-goto]").forEach(x=>x.onclick=()=>switchTab(x.dataset.goto));
+    }
+    function renderCalendar(){
+      const y=month.getFullYear(),m=month.getMonth(),days=new Date(y,m+1,0).getDate(),start=(new Date(y,m,1).getDay()+6)%7,today=iso(new Date());
+      let cells=Array.from({length:start},()=>`<button class="day off"></button>`);
+      for(let d=1;d<=days;d++){let ds=iso(new Date(y,m,d)),c=count(ds);cells.push(`<button class="day ${c===3?"full":c===2?"partial":c===1?"some":""} ${ds===today?"today":""} ${ds===selected?"selected":""}" data-date="${ds}"><span>${d}</span><i>${c===3?"♥":c===2?"★":c===1?"✓":""}</i></button>`)}
+      const dates=Array.from({length:days},(_,i)=>iso(new Date(y,m,i+1))),doneDays=dates.filter(d=>count(d)===3).length,rate=Math.round(dates.reduce((s,d)=>s+count(d),0)/(days*3)*100),cal=dates.reduce((s,d)=>s+calories(d),0);
+      $("#calendar").innerHTML=`${hero()}<section class="card panel"><div class="month-nav"><button class="arrow" id="prevM">‹</button><div class="month-label">${y} 年 ${m+1} 月</div><button class="arrow" id="nextM">›</button></div><div class="week">${["一","二","三","四","五","六","日"].map(x=>`<div>${x}</div>`).join("")}</div><div class="calendar">${cells.join("")}</div><div class="legend"><span>♥ 完成</span><span>★ 超棒</span><span>✓ 部分完成</span></div><div class="mini-stats"><div class="mini"><small>满格</small><b>${doneDays}</b></div><div class="mini"><small>完成率</small><b>${rate}%</b></div><div class="mini"><small>卡路里</small><b>${cal}</b></div></div></section><section class="card"><div class="task-head"><span>${selected} · ${plans[weekday(dateOf(selected))].t}</span></div><div class="checks">${checks(selected)}</div><div class="cal-input"><div><label>当天运动卡路里</label><small>也可以在这里补录</small></div><input id="calMini" type="number" min="0" value="${calories(selected)}"></div></section>`;
+      $("#prevM").onclick=()=>{month=new Date(y,m-1,1);render(false)};$("#nextM").onclick=()=>{month=new Date(y,m+1,1);render(false)};
+      $$("#calendar .day[data-date]").forEach(b=>b.onclick=()=>{selected=b.dataset.date;render()});
+      bindChecks("#calendar");$("#calMini").oninput=e=>setCalories(selected,e.target.value);
+    }
+    function renderPlan(){
+      const active=weekday(dateOf(selected));
+      $("#plan").innerHTML=`${hero()}<section class="card panel"><h2 class="title"><strong>本周训练计划</strong><span class="pill">7 天</span></h2><div class="plan-list">${plans.map((p,i)=>`<button class="plan-row ${i===active?"on":""}" data-plan="${i}"><span class="date-chip">${p.d}<br><small>05.${String(12+i).padStart(2,"0")}</small></span><img src="assets/characters/girl-${p.img}.png" alt=""><span class="plan-main"><b>${p.t}</b><small>${p.time} · ${p.level}</small></span><span class="ok">✓</span></button>`).join("")}</div></section><section class="card panel">${planDetail()}</section>`;
+      $$("#plan [data-plan]").forEach(b=>b.onclick=()=>{let d=dateOf(selected);d.setDate(d.getDate()+(+b.dataset.plan-weekday(d)));selected=iso(d);render()});
+    }
+    function planDetail(){const p=plans[weekday(dateOf(selected))];return `<h2 class="title"><strong>${p.d} · ${p.t}</strong><span class="pill">${p.level}</span></h2><div class="plan-list">${p.steps.map(x=>`<div class="plan-row"><span class="date-chip">做</span><span></span><span class="plan-main"><b>${x}</b><small>${p.time}</small></span><span></span></div>`).join("")}</div><div class="cta-row"><a class="btn primary" target="_blank" rel="noopener" href="https://search.bilibili.com/all?keyword=${encodeURIComponent(p.q)}">开始训练 ▶</a><button class="btn ghost" onclick="switchTab('today')">去打卡</button></div>`}
+    function renderMeals(){
+      const p=plans[weekday(dateOf(selected))],names=["早餐","午餐","晚餐"],times=["7:30","12:30","18:30"],cls=["pink","orange","blue"];
+      $("#meals").innerHTML=`${hero()}<section class="card panel"><h2 class="title"><strong>今日三餐搭配</strong><span class="pill">轻盈版</span></h2>${p.meals.map((m,i)=>`<div class="meal-card ${cls[i]}"><img src="assets/${["food-breakfast.png","food-lunch.png","food-dinner.png"][i]}" alt=""><div><h3>${names[i]} <small>${times[i]}</small></h3><p>${m}</p></div></div>`).join("")}<div class="macro"><div><b>105g</b><small>蛋白</small></div><div><b>350g</b><small>蔬菜</small></div><div><b>120g</b><small>主食</small></div><div><b>1500ml</b><small>饮水</small></div></div></section><section class="card panel"><h2 class="title"><strong>轻食灵感</strong><button class="pill" id="shuffle">换一换</button></h2><div class="shortcuts"><div class="shortcut orange"><h3>牛油果鸡蛋沙拉</h3><ul><li>高蛋白</li><li>低负担</li></ul></div><div class="shortcut green"><h3>藜麦鸡胸碗</h3><ul><li>饱腹感强</li><li>适合午餐</li></ul></div></div></section>`;
+      $("#shuffle").onclick=()=>alert("下一版我可以把这里做成随机食谱库。");
+    }
+    function render(scroll=true){renderToday();renderCalendar();renderPlan();renderMeals();if(scroll)scrollTo({top:0,behavior:"smooth"})}
+    function switchTab(id){$$(".screen").forEach(s=>s.classList.toggle("on",s.id===id));$$(".tab").forEach(t=>t.classList.toggle("on",t.dataset.tab===id));scrollTo({top:0,behavior:"smooth"})}
+    $$(".tab").forEach(t=>t.onclick=()=>switchTab(t.dataset.tab));
+    if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js").catch(()=>{});
+    render(false);
+  </script>
 </body>
 </html>

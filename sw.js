@@ -1,4 +1,4 @@
-const CACHE_NAME = "fitness-plan-pixel-v4";
+const CACHE_NAME = "fitness-plan-pixel-v5";
 const ASSETS = [
   "./",
   "index.html",
@@ -6,7 +6,12 @@ const ASSETS = [
   "icon-180.png",
   "icon-192.png",
   "icon-512.png",
-  "assets/mascot.png",
+  "assets/characters/girl-hero.png",
+  "assets/characters/girl-warmup.png",
+  "assets/characters/girl-dumbbell.png",
+  "assets/characters/girl-plank.png",
+  "assets/characters/girl-stretch.png",
+  "assets/characters/girl-thumb.png",
   "assets/warmup.png",
   "assets/training.png",
   "assets/stretch.png",

@@ -1,12 +1,12 @@
 {
   "name": "主理人的训练计划",
-  "short_name": "健身计划",
-  "description": "可爱像素风居家健身、餐谱和打卡看板。",
+  "short_name": "训练计划",
+  "description": "可爱像素风健身打卡、训练计划和三餐搭配小应用。",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#fff7df",
-  "theme_color": "#ffe9f0",
+  "background_color": "#fff5de",
+  "theme_color": "#fff5de",
   "icons": [
     {
       "src": "icon-192.png",
