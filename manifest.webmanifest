@@ -1,0 +1,22 @@
+{
+  "name": "主理人的训练计划",
+  "short_name": "健身计划",
+  "description": "可爱像素风居家健身、餐谱和打卡看板。",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#fff7df",
+  "theme_color": "#ffe9f0",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

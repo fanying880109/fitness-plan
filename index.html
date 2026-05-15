@@ -3,50 +3,122 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#111827">
-<title>主理人的居家健身计划</title>
+<meta name="theme-color" content="#ffe9f0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="健身计划">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="apple-touch-icon" href="icon-180.png">
+<link rel="manifest" href="manifest.webmanifest">
+<title>主理人的训练计划</title>
 <style>
-*{box-sizing:border-box}body{margin:0;background:#f5f7fb;color:#172033;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.55}button,input{font:inherit}.app{max-width:760px;margin:auto;padding:max(14px,env(safe-area-inset-top)) 14px calc(28px + env(safe-area-inset-bottom))}.hero{padding:20px 4px 16px}.eyebrow{margin:0 0 8px;color:#0f766e;font-size:13px;font-weight:800}h1{margin:0;font-size:clamp(28px,8vw,42px);line-height:1.08;letter-spacing:0}.hero p{margin:12px 0 0;color:#667085;font-size:15px}.today{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;margin-top:18px;padding:14px;border:1px solid #dde3ee;border-radius:8px;background:#fff;box-shadow:0 14px 34px rgba(20,30,55,.1)}.today small{display:block;color:#667085;font-weight:800}.today b{display:block;margin-top:3px;font-size:18px}.score{min-width:82px;padding:10px 12px;border-radius:8px;background:#111827;color:#fff;text-align:center}.score strong{display:block;font-size:22px;line-height:1}.score span{font-size:12px;color:rgba(255,255,255,.72)}.tabs-wrap{position:sticky;top:0;z-index:10;margin:8px -14px 16px;padding:10px 14px;border-bottom:1px solid rgba(221,227,238,.78);background:rgba(245,247,251,.94);backdrop-filter:blur(16px)}.tabs{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(58px,1fr);gap:8px;overflow-x:auto;scrollbar-width:none}.tabs::-webkit-scrollbar{display:none}.tab{min-height:42px;border:1px solid #dde3ee;border-radius:8px;background:#fff;color:#667085;font-size:14px;font-weight:800;white-space:nowrap}.tab.on{border-color:#111827;background:#111827;color:#fff}.card{display:none;overflow:hidden;border:1px solid #dde3ee;border-radius:8px;background:#fff;box-shadow:0 14px 34px rgba(20,30,55,.1)}.card.on{display:block}.head{padding:18px;background:#111827;color:#fff}.meta{display:flex;flex-wrap:wrap;gap:8px}.pill{padding:5px 9px;border-radius:999px;background:rgba(255,255,255,.12);color:rgba(255,255,255,.86);font-size:12px;font-weight:800}.head h2{margin:12px 0 4px;font-size:26px;letter-spacing:0}.head p{margin:0;color:rgba(255,255,255,.74);font-size:14px}.checks{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:12px;border-bottom:1px solid #dde3ee;background:#f9fbff}.ck{position:relative}.ck input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer}.ck span{display:flex;min-height:44px;align-items:center;justify-content:center;border:1px solid #dde3ee;border-radius:8px;background:#fff;color:#667085;font-size:13px;font-weight:800;pointer-events:none}.ck input:checked+span{border-color:rgba(15,118,110,.3);background:#e8f7f1;color:#0f766e}.content{padding:16px}.block{margin:0 0 18px}.block:last-child{margin-bottom:0}.block h3{display:flex;gap:8px;align-items:center;margin:0 0 10px;font-size:18px}.mark{width:9px;height:22px;border-radius:999px;background:#2563eb}.grid{display:grid;gap:10px}.item{padding:13px;border:1px solid #dde3ee;border-radius:8px;background:#fbfcff}.item h4{margin:0 0 6px;font-size:15px}.item p,.item li{color:#667085;font-size:14px}.item p{margin:0}.item ul{margin:6px 0 0;padding-left:18px}.tip{padding:13px;border-radius:8px;background:#eaf1ff;color:#1d3d70;font-size:14px}.actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}.action{display:flex;min-height:44px;align-items:center;justify-content:center;border-radius:8px;font-size:14px;font-weight:800;text-decoration:none}.primary{background:#fb7299;color:#fff}.secondary{border:1px solid #dde3ee;color:#172033}.note{margin:18px 2px 0;color:#667085;font-size:13px;text-align:center}@media(min-width:680px){.grid{grid-template-columns:repeat(2,1fr)}}
+:root{--cream:#fff7df;--paper:#fffdf2;--ink:#3f2e2a;--muted:#8a6f68;--line:#3f2e2a;--pink:#ff8faf;--pink2:#ffd6df;--mint:#9ee6bc;--blue:#95c9ff;--yellow:#ffe082;--lav:#cab7ff;--green:#41b883;--shadow:4px 4px 0 #3f2e2a}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:linear-gradient(#fff1c8,#ffe9f0 48%,#dff8ee);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.5}button,input{font:inherit;color:inherit}button{cursor:pointer}.app{max-width:780px;min-height:100vh;margin:auto;padding:max(14px,env(safe-area-inset-top)) 14px calc(92px + env(safe-area-inset-bottom))}.top{position:relative;padding:16px 14px 14px;border:3px solid var(--line);border-radius:18px;background:var(--paper);box-shadow:var(--shadow);overflow:hidden}.top:before{content:"";position:absolute;right:16px;top:14px;width:58px;height:58px;background:linear-gradient(90deg,var(--pink) 0 50%,var(--blue) 50%);border:3px solid var(--line);box-shadow:4px 0 0 var(--yellow),0 4px 0 var(--mint);image-rendering:pixelated}.eyebrow{margin:0;color:#9d3f62;font-size:13px;font-weight:900}.top h1{margin:4px 72px 6px 0;font-size:30px;line-height:1.08;letter-spacing:0}.top p{margin:0;color:var(--muted);font-size:14px}.stats{display:grid;grid-template-columns:1fr 1fr 1fr;gap:9px;margin-top:13px}.stat{min-height:64px;padding:9px;border:2px solid var(--line);border-radius:12px;background:var(--cream);box-shadow:2px 2px 0 var(--line)}.stat small{display:block;color:var(--muted);font-size:11px;font-weight:900}.stat b{display:block;margin-top:2px;font-size:18px}.view{display:none;margin-top:16px}.view.on{display:block}.panel{margin-bottom:14px;padding:14px;border:3px solid var(--line);border-radius:18px;background:var(--paper);box-shadow:var(--shadow)}.panel-title{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:0 0 12px;font-size:19px}.badge,.chip{display:inline-flex;align-items:center;justify-content:center;min-height:28px;padding:4px 9px;border:2px solid var(--line);border-radius:10px;background:var(--yellow);font-size:12px;font-weight:900;box-shadow:2px 2px 0 var(--line)}.chip.pink{background:var(--pink2)}.chip.mint{background:var(--mint)}.chip.blue{background:var(--blue)}.chip.lav{background:var(--lav)}.today-card{display:grid;gap:10px}.hero-card{padding:13px;border:2px solid var(--line);border-radius:14px;background:#fff;box-shadow:3px 3px 0 var(--line)}.hero-card h2{margin:0;font-size:23px}.hero-card p{margin:5px 0 0;color:var(--muted);font-size:14px}.chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:10px}.checks{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.ck{position:relative}.ck input{position:absolute;inset:0;width:100%;height:100%;opacity:0}.ck span{display:flex;min-height:50px;align-items:center;justify-content:center;border:2px solid var(--line);border-radius:12px;background:#fff;color:var(--muted);font-weight:900;box-shadow:3px 3px 0 var(--line);pointer-events:none}.ck input:checked+span{background:var(--mint);color:#22563e;transform:translate(2px,2px);box-shadow:1px 1px 0 var(--line)}.cal-box{display:grid;grid-template-columns:1fr 120px;gap:10px;align-items:center;padding:12px;border:2px solid var(--line);border-radius:14px;background:var(--pink2);box-shadow:3px 3px 0 var(--line)}.cal-box label{font-weight:900}.cal-box small{display:block;color:#7d4a59;font-size:12px}.cal-box input{width:100%;min-height:44px;border:2px solid var(--line);border-radius:10px;background:#fff;text-align:center;font-weight:900;box-shadow:2px 2px 0 var(--line)}.grid{display:grid;gap:10px}.item{padding:12px;border:2px solid var(--line);border-radius:14px;background:#fff;box-shadow:3px 3px 0 var(--line)}.item h4{margin:0 0 6px;font-size:15px}.item p,.item li{color:var(--muted);font-size:14px}.item p{margin:0}.item ul{margin:6px 0 0;padding-left:18px}.actions{display:grid;grid-template-columns:1fr 1fr;gap:10px}.btn{display:flex;min-height:48px;align-items:center;justify-content:center;border:2px solid var(--line);border-radius:12px;background:#fff;color:var(--ink);font-weight:900;text-decoration:none;box-shadow:3px 3px 0 var(--line)}.btn.primary{background:var(--pink);color:#fff}.btn:active,.tab:active,.day-card:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--line)}.month-head{display:flex;align-items:center;justify-content:space-between;gap:10px}.month-head button{width:42px;height:38px;border:2px solid var(--line);border-radius:10px;background:var(--yellow);font-weight:900;box-shadow:2px 2px 0 var(--line)}.week,.calendar{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}.week{margin:10px 0 7px;color:var(--muted);font-size:12px;font-weight:900;text-align:center}.day{position:relative;min-height:48px;border:2px solid var(--line);border-radius:10px;background:#fff;text-align:left;font-size:12px;font-weight:900;box-shadow:2px 2px 0 var(--line)}.day span{position:absolute;left:6px;top:4px}.day i{position:absolute;right:5px;bottom:3px;font-style:normal;color:#9d3f62}.day.off{opacity:.3}.day.today{outline:3px solid var(--pink)}.day.partial{background:var(--yellow)}.day.full{background:var(--mint)}.day.selected{background:var(--blue)}.mini-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}.mini{padding:9px;border:2px solid var(--line);border-radius:12px;background:#fff;text-align:center;box-shadow:2px 2px 0 var(--line)}.mini small{display:block;color:var(--muted);font-size:11px;font-weight:900}.mini b{font-size:17px}.day-card{display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:center;margin-bottom:9px;padding:10px;border:2px solid var(--line);border-radius:14px;background:#fff;box-shadow:3px 3px 0 var(--line)}.day-card.on{background:var(--blue)}.day-card strong{display:block}.day-card small{color:var(--muted);font-weight:800}.icon{display:grid;width:40px;height:40px;place-items:center;border:2px solid var(--line);border-radius:10px;background:var(--pink2);font-weight:900}.meal-hero{display:grid;grid-template-columns:1fr 1fr;gap:10px}.nav{position:fixed;left:50%;bottom:10px;z-index:20;display:grid;grid-template-columns:repeat(4,1fr);gap:7px;width:min(calc(100% - 22px),760px);padding:8px;border:3px solid var(--line);border-radius:18px;background:rgba(255,253,242,.94);box-shadow:var(--shadow);transform:translateX(-50%);backdrop-filter:blur(12px)}.tab{min-height:54px;border:2px solid var(--line);border-radius:12px;background:#fff;font-size:12px;font-weight:900;box-shadow:2px 2px 0 var(--line)}.tab b{display:block;font-size:18px;line-height:1}.tab.on{background:var(--pink);color:#fff}.empty{visibility:hidden}.note{margin:12px 2px 0;color:var(--muted);font-size:12px;text-align:center}@media(min-width:680px){.grid,.meal-hero{grid-template-columns:repeat(2,1fr)}.top h1{font-size:38px}.day{min-height:62px}}
 </style>
 </head>
 <body>
-<main class="app" id="top">
-<section class="hero">
-<p class="eyebrow">7 天居家减脂塑形</p>
-<h1>主理人的训练计划</h1>
-<p>无器械训练、三餐搭配、每日打卡。手机打开就能直接照着练。</p>
-<div class="today"><div><small>今天建议</small><b id="today">读取中</b></div><div class="score"><strong id="score">0%</strong><span>本周完成</span></div></div>
-</section>
-<nav class="tabs-wrap"><div class="tabs" id="tabs"></div></nav>
-<section id="cards"></section>
-<p class="note">训练强度按当天状态调整；有疼痛或明显不适时先停止。</p>
+<main class="app">
+  <section class="top">
+    <p class="eyebrow">Cute Pixel Fitness Diary</p>
+    <h1>主理人的训练计划</h1>
+    <p>居家减脂塑形、三餐搭配、月度打卡和 Apple Watch 卡路里记录。</p>
+    <div class="stats">
+      <div class="stat"><small>今日完成</small><b id="todayDone">0/3</b></div>
+      <div class="stat"><small>本周进度</small><b id="weekRate">0%</b></div>
+      <div class="stat"><small>本月卡路里</small><b id="monthCal">0</b></div>
+    </div>
+  </section>
+
+  <section class="view on" id="view-today"></section>
+  <section class="view" id="view-calendar"></section>
+  <section class="view" id="view-plan"></section>
+  <section class="view" id="view-meals"></section>
+  <p class="note">数据只保存在你自己的手机浏览器里。重新添加到主屏幕后会更像一个小应用。</p>
 </main>
+
+<nav class="nav" aria-label="底部导航">
+  <button class="tab on" data-view="today"><b>◆</b>今日</button>
+  <button class="tab" data-view="calendar"><b>□</b>日历</button>
+  <button class="tab" data-view="plan"><b>▣</b>计划</button>
+  <button class="tab" data-view="meals"><b>●</b>餐谱</button>
+</nav>
+
 <script>
 const plan=[
-["周一","全身塑形","力量基础","35-40 分钟","中等","建立一周训练节奏，优先保证动作质量。",[["热身激活",["关节活动各 20 秒","开合跳 40 秒","高抬腿 40 秒"]],["全身力量",["深蹲 3 组 x 12-15 次","跪姿俯卧撑 3 组，接近力竭","交替弓步蹲 3 组 x 每侧 10-12 次","平板支撑 3 组 x 30-45 秒","仰卧臀桥 3 组 x 15 次"]],["拉伸放松",["大腿、臀部、胸部和手臂 5 分钟"]]],["水煮蛋 1 个 + 全麦面包 1 片 + 无糖牛奶/豆浆","糙米饭一拳 + 清蒸鸡胸/鱼肉一掌 + 清炒蔬菜","蒸红薯小份 + 豆腐菌菇汤 + 凉拌菠菜"],"力量日是塑形基础。宁可少做几次，也要让臀腿、核心和胸背真正发力。","全身塑形 无器械 跟练"],
-["周二","有氧燃脂","心肺","35-40 分钟","中等","保持微喘但能说短句的强度。",[["热身",["关节活动和动态拉伸 5 分钟"]],["持续有氧",["低冲击有氧操，或原地慢跑 + 高抬腿 + 后踢腿组合 30 分钟","全程保持稳定呼吸"]],["拉伸",["大腿后侧、小腿和腰部 5 分钟"]]],["燕麦粥 40g + 鸡蛋 1 个 + 半个水果","杂粮饭一拳 + 烤瘦肉一掌 + 大份蔬菜沙拉","杂粮粥一碗 + 清炒虾仁 + 焯水西兰花"],"有氧日的关键是持续。别把前 5 分钟练得太猛，留一点余量更容易完成。","低冲击有氧 燃脂 跟练"],
-["周三","积极恢复","恢复","15-25 分钟","低","让身体恢复，为后半周训练蓄力。",[["轻量活动",["全身拉伸、瑜伽或散步 15-20 分钟","也可以完全休息"]],["呼吸放松",["睡前做 3-5 分钟腹式呼吸"]]],["沿用周一，可把面包换成玉米","沿用周二，可加一份蒸豆腐","清淡为主，可换成冬瓜汤 + 优质蛋白"],"恢复不是偷懒。睡眠、轻拉伸和稳定饮食，会直接影响后面训练的表现。","全身拉伸 瑜伽 放松"],
-["周四","上肢 + 核心","手臂腰腹","35 分钟","中等","专注上肢线条和核心稳定。",[["热身",["手臂画圈、肩部环绕、胸椎打开 5 分钟"]],["针对训练",["窄距跪姿俯卧撑 3 组，接近力竭","俯身 YTW 每个字母 2 组 x 10 次","仰卧卷腹 3 组 x 15-20 次","仰卧交替抬腿 3 组 x 每侧 15-20 次","俄罗斯转体 3 组 x 每侧 15 次"]],["拉伸",["胸、肩、腹和背 5 分钟"]]],["无糖酸奶 150g + 坚果 10g + 燕麦片 30g","鸡胸肉沙拉 + 油醋汁","清蒸鲈鱼 + 凉拌秋葵，主食少量或不加"],"核心训练不要用脖子硬拉。慢起慢落，比快速凑次数更有效。","手臂 核心 无器械 跟练"],
-["周五","HIIT 燃脂","爆发","30 分钟","高","短时间提高心率，按体感及时降阶。",[["热身",["充分热身 5 分钟"]],["HIIT 循环",["每个动作 40 秒，休息 20 秒","开合跳、深蹲跳、登山式、原地高抬腿","一轮后休息 1 分钟，共 3-4 轮"]],["拉伸",["腿部、髋部和肩颈 5 分钟"]]],["全麦馒头小份 + 鸡蛋 1 个 + 黑咖啡可选","瘦肉炒蔬菜 + 少量米饭","番茄菌菇汤 + 煎鸡胸肉，少油少盐"],"HIIT 强度较高。喘得太厉害就改成低冲击版本，完成比硬撑重要。","低冲击 HIIT 燃脂 跟练"],
-["周六","趣味有氧","坚持感","30-40 分钟","自选","选择喜欢的内容，让运动更容易长期坚持。",[["自选有氧",["舞蹈有氧或趣味燃脂操 30-40 分钟","也可以做核心强化，把跳跃减少"]],["轻拉伸",["小腿、臀腿和肩颈 5 分钟"]]],["可以稍丰富，如蔬菜鸡蛋饼","外出可选日式定食：烤鱼 + 米饭 + 味噌汤","正常健康晚餐，七分饱"],"周末不用追求完美，关键是别断掉节奏。喜欢的训练，才最容易坚持。","趣味有氧 减脂操 跟练"],
-["周日","完全休息","修复","自由","低","给身体和情绪都留出空白。",[["全天休息",["可散步、泡沫轴放松或轻柔拉伸","不安排正式训练"]],["复盘",["记录完成情况、睡眠、围度和体感变化"]]],["丰富但健康的早餐","正常健康午餐","正常健康晚餐，七分饱"],"休息日是计划的一部分。恢复好了，下周才更有力气继续。","全身放松 拉伸 恢复"]
+{d:"周一",t:"全身塑形",f:"力量基础",time:"35-40 分钟",level:"中等",q:"全身塑形 无器械 跟练",r:[["热身激活",["关节活动各 20 秒","开合跳 40 秒","高抬腿 40 秒"]],["全身力量",["深蹲 3 组 x 12-15 次","跪姿俯卧撑 3 组，接近力竭","交替弓步蹲 3 组 x 每侧 10-12 次","平板支撑 3 组 x 30-45 秒","仰卧臀桥 3 组 x 15 次"]],["拉伸放松",["大腿、臀部、胸部和手臂 5 分钟"]]],m:["水煮蛋 1 个 + 全麦面包 1 片 + 无糖牛奶/豆浆","糙米饭一拳 + 清蒸鸡胸/鱼肉一掌 + 清炒蔬菜","蒸红薯小份 + 豆腐菌菇汤 + 凉拌菠菜"],tip:"力量日是塑形基础。动作质量大于数量。"},
+{d:"周二",t:"有氧燃脂",f:"心肺",time:"35-40 分钟",level:"中等",q:"低冲击有氧 燃脂 跟练",r:[["热身",["关节活动和动态拉伸 5 分钟"]],["持续有氧",["低冲击有氧操，或原地慢跑 + 高抬腿 + 后踢腿组合 30 分钟","全程保持稳定呼吸"]],["拉伸",["大腿后侧、小腿和腰部 5 分钟"]]],m:["燕麦粥 40g + 鸡蛋 1 个 + 半个水果","杂粮饭一拳 + 烤瘦肉一掌 + 大份蔬菜沙拉","杂粮粥一碗 + 清炒虾仁 + 焯水西兰花"],tip:"有氧日的关键是持续，不要一开始冲太猛。"},
+{d:"周三",t:"积极恢复",f:"恢复",time:"15-25 分钟",level:"低",q:"全身拉伸 瑜伽 放松",r:[["轻量活动",["全身拉伸、瑜伽或散步 15-20 分钟","也可以完全休息"]],["呼吸放松",["睡前做 3-5 分钟腹式呼吸"]]],m:["沿用周一，可把面包换成玉米","沿用周二，可加一份蒸豆腐","清淡为主，可换成冬瓜汤 + 优质蛋白"],tip:"恢复也是训练的一部分。"},
+{d:"周四",t:"上肢 + 核心",f:"手臂腰腹",time:"35 分钟",level:"中等",q:"手臂 核心 无器械 跟练",r:[["热身",["手臂画圈、肩部环绕、胸椎打开 5 分钟"]],["针对训练",["窄距跪姿俯卧撑 3 组，接近力竭","俯身 YTW 每个字母 2 组 x 10 次","仰卧卷腹 3 组 x 15-20 次","仰卧交替抬腿 3 组 x 每侧 15-20 次","俄罗斯转体 3 组 x 每侧 15 次"]],["拉伸",["胸、肩、腹和背 5 分钟"]]],m:["无糖酸奶 150g + 坚果 10g + 燕麦片 30g","鸡胸肉沙拉 + 油醋汁","清蒸鲈鱼 + 凉拌秋葵，主食少量或不加"],tip:"核心训练慢起慢落，比快速凑次数更有效。"},
+{d:"周五",t:"HIIT 燃脂",f:"爆发",time:"30 分钟",level:"高",q:"低冲击 HIIT 燃脂 跟练",r:[["热身",["充分热身 5 分钟"]],["HIIT 循环",["每个动作 40 秒，休息 20 秒","开合跳、深蹲跳、登山式、原地高抬腿","一轮后休息 1 分钟，共 3-4 轮"]],["拉伸",["腿部、髋部和肩颈 5 分钟"]]],m:["全麦馒头小份 + 鸡蛋 1 个 + 黑咖啡可选","瘦肉炒蔬菜 + 少量米饭","番茄菌菇汤 + 煎鸡胸肉，少油少盐"],tip:"强度高，喘得太厉害就改低冲击版本。"},
+{d:"周六",t:"趣味有氧",f:"坚持感",time:"30-40 分钟",level:"自选",q:"趣味有氧 减脂操 跟练",r:[["自选有氧",["舞蹈有氧或趣味燃脂操 30-40 分钟","也可以做核心强化，把跳跃减少"]],["轻拉伸",["小腿、臀腿和肩颈 5 分钟"]]],m:["可以稍丰富，如蔬菜鸡蛋饼","外出可选日式定食：烤鱼 + 米饭 + 味噌汤","正常健康晚餐，七分饱"],tip:"喜欢的训练，才最容易坚持。"},
+{d:"周日",t:"完全休息",f:"修复",time:"自由",level:"低",q:"全身放松 拉伸 恢复",r:[["全天休息",["可散步、泡沫轴放松或轻柔拉伸","不安排正式训练"]],["复盘",["记录完成情况、睡眠、围度和体感变化"]]],m:["丰富但健康的早餐","正常健康午餐","正常健康晚餐，七分饱"],tip:"恢复好了，下周才更有力气继续。"}
 ];
-const $=s=>document.querySelector(s),tabs=$("#tabs"),cards=$("#cards"),key=(d,k)=>`fit-v3-${d}-${k}`;
-function todayIndex(){let d=new Date().getDay();return d?d-1:6}
-function item(title,body){return `<div class="item"><h4>${title}</h4>${Array.isArray(body)?`<ul>${body.map(x=>`<li>${x}</li>`).join("")}</ul>`:`<p>${body}</p>`}</div>`}
-function render(){
-plan.forEach((d,i)=>{
-tabs.insertAdjacentHTML("beforeend",`<button class="tab" data-day="${i}">${d[0]}</button>`);
-cards.insertAdjacentHTML("beforeend",`<article class="card" data-day="${i}"><div class="head"><div class="meta"><span class="pill">${d[2]}</span><span class="pill">${d[3]}</span><span class="pill">${d[4]}</span></div><h2>${d[0]} · ${d[1]}</h2><p>${d[5]}</p></div><div class="checks">${["热身","训练","拉伸"].map((x,j)=>`<label class="ck"><input type="checkbox" data-kind="${j}"><span>${x}</span></label>`).join("")}</div><div class="content"><section class="block"><h3><span class="mark"></span>运动计划</h3><div class="grid">${d[6].map(x=>item(x[0],x[1])).join("")}</div><div class="actions"><a class="action primary" target="_blank" rel="noopener" href="https://search.bilibili.com/all?keyword=${encodeURIComponent(d[9])}">B站跟练</a><a class="action secondary" href="#top" data-reset="${i}">清空当天</a></div></section><section class="block"><h3><span class="mark"></span>三餐搭配</h3><div class="grid">${["早餐","午餐","晚餐"].map((m,j)=>item(m,d[7][j])).join("")}</div></section><section class="block"><div class="tip">${d[8]}</div></section></div></article>`);
-});
-document.querySelectorAll(".tab").forEach(b=>b.onclick=()=>show(+b.dataset.day));
-document.querySelectorAll(".ck input").forEach(input=>{let c=input.closest(".card"),d=+c.dataset.day,k=input.dataset.kind;input.checked=localStorage.getItem(key(d,k))==="1";input.onchange=()=>{localStorage.setItem(key(d,k),input.checked?"1":"0");score()}});
-document.querySelectorAll("[data-reset]").forEach(a=>a.onclick=e=>{e.preventDefault();let c=a.closest(".card"),d=+c.dataset.day;c.querySelectorAll("input").forEach(input=>{input.checked=false;localStorage.removeItem(key(d,input.dataset.kind))});score()});
-let t=todayIndex();$("#today").textContent=`${plan[t][0]} · ${plan[t][1]}`;show(t);score()
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+let selectedDate=iso(new Date()),shownMonth=new Date();
+const kinds=["warmup","training","stretch"],kindText=["热身","训练","拉伸"];
+function iso(d){return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`}
+function fromIso(s){let [y,m,d]=s.split("-").map(Number);return new Date(y,m-1,d)}
+function planIndex(date){let d=date.getDay();return d?d-1:6}
+function k(date,kind){return `pixel-fit-${date}-${kind}`}
+function checked(date,kind){return localStorage.getItem(k(date,kind))==="1"}
+function calories(date){return Number(localStorage.getItem(k(date,"cal"))||0)}
+function doneCount(date){return kinds.filter(x=>checked(date,x)).length}
+function setCheck(date,kind,on){localStorage.setItem(k(date,kind),on?"1":"0");renderAll()}
+function setCal(date,value){localStorage.setItem(k(date,"cal"),String(Math.max(0,Number(value)||0)));renderAll(false)}
+function card(title,body){return `<div class="item"><h4>${title}</h4>${Array.isArray(body)?`<ul>${body.map(x=>`<li>${x}</li>`).join("")}</ul>`:`<p>${body}</p>`}</div>`}
+function chips(p){return `<div class="chips"><span class="chip mint">${p.f}</span><span class="chip blue">${p.time}</span><span class="chip pink">${p.level}</span></div>`}
+function renderToday(){
+ const date=fromIso(selectedDate),p=plan[planIndex(date)],dc=doneCount(selectedDate);
+ $("#view-today").innerHTML=`<section class="panel today-card">
+  <h3 class="panel-title">今日小任务 <span class="badge">${selectedDate}</span></h3>
+  <div class="hero-card"><h2>${p.d} · ${p.t}</h2><p>${p.tip}</p>${chips(p)}</div>
+  <div class="checks">${kinds.map((x,i)=>`<label class="ck"><input type="checkbox" data-kind="${x}" ${checked(selectedDate,x)?"checked":""}><span>${kindText[i]}</span></label>`).join("")}</div>
+  <div class="cal-box"><div><label for="calInput">运动卡路里</label><small>从 Apple Watch 健身记录里填入当天消耗</small></div><input id="calInput" inputmode="numeric" type="number" min="0" step="1" value="${calories(selectedDate)}" placeholder="0"></div>
+  <div class="actions"><a class="btn primary" target="_blank" rel="noopener" href="https://search.bilibili.com/all?keyword=${encodeURIComponent(p.q)}">B站跟练</a><button class="btn" id="clearDay">清空当天</button></div>
+ </section>
+ <section class="panel"><h3 class="panel-title">运动计划 <span class="chip lav">${dc}/3</span></h3><div class="grid">${p.r.map(x=>card(x[0],x[1])).join("")}</div></section>
+ <section class="panel"><h3 class="panel-title">三餐搭配</h3><div class="grid">${["早餐","午餐","晚餐"].map((m,i)=>card(m,p.m[i])).join("")}</div></section>`;
+ $$("#view-today input[type=checkbox]").forEach(i=>i.onchange=()=>setCheck(selectedDate,i.dataset.kind,i.checked));
+ $("#calInput").oninput=e=>setCal(selectedDate,e.target.value);
+ $("#clearDay").onclick=()=>{kinds.forEach(x=>localStorage.removeItem(k(selectedDate,x)));localStorage.removeItem(k(selectedDate,"cal"));renderAll()};
 }
-function show(i){document.querySelectorAll(".tab,.card").forEach(el=>el.classList.toggle("on",+el.dataset.day===i))}
-function score(){let done=0;plan.forEach((_,d)=>[0,1,2].forEach(k=>{if(localStorage.getItem(key(d,k))==="1")done++}));$("#score").textContent=`${Math.round(done/21*100)}%`}
-render();
+function renderCalendar(){
+ const y=shownMonth.getFullYear(),m=shownMonth.getMonth(),first=new Date(y,m,1),start=(first.getDay()+6)%7,days=new Date(y,m+1,0).getDate(),today=iso(new Date());
+ let cells=[];for(let i=0;i<start;i++)cells.push(`<button class="day off empty"></button>`);
+ for(let d=1;d<=days;d++){let ds=iso(new Date(y,m,d)),done=doneCount(ds),cls=done===3?"full":done>0?"partial":"";cells.push(`<button class="day ${cls} ${ds===today?"today":""} ${ds===selectedDate?"selected":""}" data-date="${ds}"><span>${d}</span><i>${done===3?"♥":done>0?done+"/3":""}</i></button>`)}
+ const monthDates=[...Array(days)].map((_,i)=>iso(new Date(y,m,i+1))),full=monthDates.filter(d=>doneCount(d)===3).length,totalCal=monthDates.reduce((s,d)=>s+calories(d),0),rate=Math.round(monthDates.reduce((s,d)=>s+doneCount(d),0)/(days*3)*100);
+ $("#view-calendar").innerHTML=`<section class="panel">
+ <div class="month-head"><button id="prevMonth">‹</button><h3 class="panel-title">${m+1}月打卡看板</h3><button id="nextMonth">›</button></div>
+ <div class="week">${["一","二","三","四","五","六","日"].map(x=>`<div>${x}</div>`).join("")}</div><div class="calendar">${cells.join("")}</div>
+ <div class="mini-stats"><div class="mini"><small>满格天</small><b>${full}</b></div><div class="mini"><small>完成率</small><b>${rate}%</b></div><div class="mini"><small>卡路里</small><b>${totalCal}</b></div></div>
+ </section><section class="panel">${selectedPreview()}</section>`;
+ $("#prevMonth").onclick=()=>{shownMonth=new Date(y,m-1,1);renderCalendar()};
+ $("#nextMonth").onclick=()=>{shownMonth=new Date(y,m+1,1);renderCalendar()};
+ $$("#view-calendar .day[data-date]").forEach(b=>b.onclick=()=>{selectedDate=b.dataset.date;renderAll()});
+}
+function selectedPreview(){let d=fromIso(selectedDate),p=plan[planIndex(d)];return `<h3 class="panel-title">${selectedDate} <span class="chip blue">${p.t}</span></h3><div class="checks">${kinds.map((x,i)=>`<label class="ck"><input type="checkbox" data-kind="${x}" ${checked(selectedDate,x)?"checked":""}><span>${kindText[i]}</span></label>`).join("")}</div><div class="cal-box" style="margin-top:10px"><div><label>运动卡路里</label><small>当天记录</small></div><input id="calInputMini" inputmode="numeric" type="number" min="0" value="${calories(selectedDate)}"></div>`}
+function renderPlan(){
+ const sd=fromIso(selectedDate),active=planIndex(sd);
+ $("#view-plan").innerHTML=`<section class="panel"><h3 class="panel-title">本周训练计划 <span class="chip mint">7天循环</span></h3>${plan.map((p,i)=>`<button class="day-card ${i===active?"on":""}" data-plan="${i}"><span class="icon">${i+1}</span><span><strong>${p.d} · ${p.t}</strong><small>${p.f} · ${p.time}</small></span><span class="chip ${i===active?"pink":"blue"}">${p.level}</span></button>`).join("")}</section><section class="panel" id="planDetail"></section>`;
+ $$("#view-plan [data-plan]").forEach(b=>b.onclick=()=>{let date=fromIso(selectedDate),diff=+b.dataset.plan-planIndex(date);date.setDate(date.getDate()+diff);selectedDate=iso(date);renderAll()});
+ renderPlanDetail();
+}
+function renderPlanDetail(){let p=plan[planIndex(fromIso(selectedDate))];$("#planDetail").innerHTML=`<h3 class="panel-title">${p.d} · ${p.t}<span class="chip lav">${p.time}</span></h3><div class="grid">${p.r.map(x=>card(x[0],x[1])).join("")}</div><div class="actions" style="margin-top:12px"><a class="btn primary" target="_blank" rel="noopener" href="https://search.bilibili.com/all?keyword=${encodeURIComponent(p.q)}">开始跟练</a><button class="btn" data-goto="today">去打卡</button></div>`;$("#planDetail [data-goto]").onclick=()=>switchView("today")}
+function renderMeals(){
+ const p=plan[planIndex(fromIso(selectedDate))];
+ $("#view-meals").innerHTML=`<section class="panel"><h3 class="panel-title">今日三餐搭配 <span class="chip pink">${selectedDate}</span></h3><div class="meal-hero">${["早餐","午餐","晚餐"].map((m,i)=>card(m,p.m[i])).join("")}</div><div class="chips"><span class="chip mint">蛋白</span><span class="chip blue">蔬菜</span><span class="chip lav">主食</span><span class="chip pink">饮水</span></div></section><section class="panel"><h3 class="panel-title">轻食灵感</h3><div class="grid">${card("低脂蛋白","鸡胸、鱼肉、虾仁、鸡蛋、豆腐轮换。")}${card("温柔碳水","糙米、玉米、红薯、燕麦按训练强度增减。")}${card("高纤蔬菜","西兰花、菠菜、番茄、菌菇、秋葵优先。")}</div></section>`;
+}
+function switchView(name){$$(".view").forEach(v=>v.classList.toggle("on",v.id===`view-${name}`));$$(".tab").forEach(t=>t.classList.toggle("on",t.dataset.view===name));scrollTo({top:0,behavior:"smooth"})}
+function renderStats(){
+ const today=iso(new Date()),td=doneCount(today),now=new Date(),m=now.getMonth(),y=now.getFullYear();
+ let weekStart=new Date(now);weekStart.setDate(now.getDate()-((now.getDay()+6)%7));
+ let weekDone=0;for(let i=0;i<7;i++){let d=new Date(weekStart);d.setDate(weekStart.getDate()+i);weekDone+=doneCount(iso(d))}
+ let days=new Date(y,m+1,0).getDate(),mc=0;for(let d=1;d<=days;d++)mc+=calories(iso(new Date(y,m,d)));
+ $("#todayDone").textContent=`${td}/3`;$("#weekRate").textContent=`${Math.round(weekDone/21*100)}%`;$("#monthCal").textContent=mc;
+}
+function renderAll(redrawCalendar=true){renderToday();if(redrawCalendar)renderCalendar();renderPlan();renderMeals();renderStats();let mini=$("#calInputMini");if(mini){mini.oninput=e=>setCal(selectedDate,e.target.value);$$("#view-calendar input[type=checkbox]").forEach(i=>i.onchange=()=>setCheck(selectedDate,i.dataset.kind,i.checked))}}
+$$(".tab").forEach(t=>t.onclick=()=>switchView(t.dataset.view));
+renderAll();
+if("serviceWorker" in navigator){navigator.serviceWorker.register("sw.js").catch(()=>{})}
 </script>
 </body>
 </html>
